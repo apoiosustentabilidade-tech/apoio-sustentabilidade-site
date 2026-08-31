@@ -1,0 +1,12 @@
+APOIO SUSTENTABILIDADE — SITE
+
+1. O domínio www.apoiosustentabilidade.com.br já está configurado em robots.txt e sitemap.xml.
+2. No painel da hospedagem/cPanel, abra public_html.
+3. Envie os arquivos ou o ZIP e extraia dentro de public_html.
+4. O arquivo index.html deve ficar diretamente dentro de public_html.
+5. Ative SSL/HTTPS.
+6. Depois, cadastre o site no Google Search Console e envie /sitemap.xml.
+
+Contato configurado:
+WhatsApp: (11) 99457-6047
+E-mail: apoiosustentabilidade@gmail.com

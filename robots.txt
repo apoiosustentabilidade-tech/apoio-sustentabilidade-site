@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.apoiosustentabilidade.com.br/sitemap.xml
