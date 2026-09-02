@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Apoio Sustentabilidade atua no gerenciamento de resíduos empresariais, estruturando soluções com parceiros especializados para coleta, transporte, tratamento, destinação final e valorização de resíduos Classe I e Classe II em São Paulo e região." />
-  <meta name="keywords" content="coleta de resíduos, transporte de resíduos, destinação de resíduos, CADRI, MTR, resíduos classe I, resíduos classe II, São Paulo" />
+  <meta name="keywords" content="gerenciamento de resíduos, coleta de resíduos, transporte de resíduos, destinação de resíduos, valorização de resíduos, CADRI, MTR, resíduos classe I, resíduos classe II, São Paulo" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <title>Gerenciamento de Resíduos em São Paulo | Apoio Sustentabilidade</title>
   <link rel="canonical" href="https://www.apoiosustentabilidade.com.br/" />
@@ -17,13 +17,11 @@
   <meta name="author" content="Apoio Sustentabilidade" />
   <meta name="geo.region" content="BR-SP" />
   <meta name="geo.placename" content="São Paulo" />
-  <meta name="geo.position" content="-23.5505;-46.6333" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,17 +35,141 @@
   }
   </script>
 </head>
-<body>
-<header class="header"><div class="container nav-wrap"><a class="brand" href="#inicio" aria-label="Apoio Sustentabilidade - Início"><img class="brand-logo" src="logo-apoio.png" alt="Apoio Sustentabilidade" /></a><button class="menu-toggle" aria-label="Abrir menu">☰</button><nav class="nav"><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#diferenciais">Diferenciais</a><a href="#atuacao">Atuação</a><a href="#contato" class="btn btn-sm">Solicitar cotação</a></nav></div></header>
+<body id="top">
+<header class="header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top" aria-label="Apoio Sustentabilidade - Início">
+      <img class="brand-logo" src="logo-apoio.png" alt="Apoio Sustentabilidade" />
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav">
+      <a href="#top">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#contato" class="btn btn-sm">Solicitar cotação</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="hero" id="inicio"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Gerenciamento de resíduos com soluções sob medida</span><h1>Gestão inteligente de resíduos para sua empresa</h1><p>Ofereçemos soluções de resíduos empresariais e conectamos cada operação a parceiros especializados para coleta, transporte, tratamento e destinação final de resíduos Classe I e Classe II. Também avaliamos oportunidades de valorização, reaproveitamento, reciclagem e recuperação de materiais, conforme suas características e viabilidade.</p><div class="hero-actions"><a class="btn" href="https://wa.me/5511994576047?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank">Falar no WhatsApp</a><a class="btn btn-outline" href="#servicos">Conhecer serviços</a></div><div class="hero-badges"><span>✓ Atendimento em São Paulo</span><span>✓ Resíduos Classe I e II</span><span>✓ Parceiros selecionados para cada operação</span></div></div><aside class="quote-card"><h2>Solicite uma cotação</h2><p>Conte rapidamente o que sua empresa precisa e fale direto conosco.</p><form id="leadForm"><label>Empresa<input type="text" id="empresa" placeholder="Nome da empresa" autocomplete="organization" required /></label><label>CNPJ<input type="text" id="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required /></label><label>Nome / responsável<input type="text" id="nome" placeholder="Seu nome" autocomplete="name" required /></label><label>Telefone / WhatsApp<input type="tel" id="telefone" placeholder="(11) 99999-9999" autocomplete="tel" required /></label><label>E-mail<input type="email" id="email" placeholder="nome@empresa.com.br" autocomplete="email" required /></label><label>Tipo de resíduo / serviço<select id="servico" required><option value="">Selecione</option><option>Gerenciamento de resíduos</option><option>Coleta e transporte de resíduos</option><option>Destinação de resíduos Classe I</option><option>Destinação de resíduos Classe II</option><option>Valorização de resíduos</option><option>Avaliação para reaproveitamento / reciclagem</option><option>Resíduos industriais</option><option>Lixo comum</option><option>Resíduos eletrônicos</option><option>Caçambas e containers</option><option>Caminhão auto vácuo / sucção</option><option>Hidrojateamento / limpeza técnica</option><option>CADRI / MTR / Gestão documental</option><option>Outro serviço</option></select></label><label>Cidade / local da operação<input type="text" id="cidade" placeholder="Ex.: São Paulo - SP" autocomplete="address-level2" required /></label><label>Conte brevemente sua necessidade<textarea id="demanda" rows="5" placeholder="Ex.: tipo de resíduo, quantidade aproximada, frequência de geração/coleta, forma de armazenamento, necessidade de equipamento, destinação desejada ou interesse em valorização." required></textarea></label><p class="form-note">Preencha os dados para entendermos sua operação e retornarmos com mais agilidade. Ao continuar, você será direcionado ao WhatsApp para enviar as informações.</p><label class="consent"><input type="checkbox" id="consentimento" required /> <span>Concordo com o uso destes dados para atendimento da minha solicitação, conforme a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</span></label><button class="btn btn-full" type="submit">Solicitar avaliação pelo WhatsApp</button></form></aside></div></section>
-<section class="trust-strip"><div class="container trust-grid"><div><strong>Diagnóstico</strong><span>Entendemos a necessidade antes de definir a solução</span></div><div><strong>Rede parceira</strong><span>Integração com parceiros especializados para cada operação</span></div><div><strong>Conformidade</strong><span>Foco em documentação, rastreabilidade e destinação adequada</span></div><div><strong>Valorização</strong><span>Avaliamos alternativas de reaproveitamento, reciclagem e recuperação</span></div></div></section>
-<section class="section" id="servicos"><div class="container"><div class="section-heading"><span class="eyebrow">Nossas soluções</span><h2>Gerenciamento de resíduos pensado para a realidade da sua operação.</h2><p>Avaliamos tipo de resíduo, volume, frequência, armazenamento, documentação e objetivo da empresa para estruturar a solução mais adequada.</p></div><div class="cards"><article class="card"><div class="icon">♻</div><h3>Gerenciamento de resíduos</h3><p>Estruturação da operação desde o diagnóstico da demanda até a definição de coleta, transporte, tratamento e destinação final.</p></article><article class="card"><div class="icon">🤝</div><h3>Coleta e transporte com parceiros</h3><p>Articulação com parceiros especializados e soluções compatíveis com o tipo de resíduo, volume, rota e equipamento necessário.</p></article><article class="card"><div class="icon">⚠</div><h3>Resíduos Classe I</h3><p>Soluções para resíduos perigosos com foco em segurança, conformidade documental, transporte e destinação final adequada.</p></article><article class="card"><div class="icon">🌿</div><h3>Resíduos Classe II</h3><p>Gestão de resíduos não perigosos com avaliação de alternativas de reciclagem, reaproveitamento, recuperação ou destinação.</p></article><article class="card"><div class="icon">↻</div><h3>Valorização de resíduos</h3><p>Avaliamos resíduos e materiais para identificar, quando tecnicamente e comercialmente viável, oportunidades de reaproveitamento, reciclagem, recuperação ou outras formas de valorização.</p></article><article class="card"><div class="icon">📋</div><h3>CADRI, MTR e documentação</h3><p>Apoio no fluxo documental para manter a operação organizada, rastreável e em conformidade com a necessidade de cada atendimento.</p></article></div></div></section>
-<section class="section section-dark" id="diferenciais"><div class="container two-col"><div><span class="eyebrow light">Por que escolher a Apoio</span><h2>Mais do que contratar uma coleta: estruturamos a solução da operação.</h2><p class="lead">Atuamos como ponto de apoio entre a necessidade da sua empresa e a solução operacional adequada, organizando o atendimento e conectando cada demanda a parceiros compatíveis com o serviço.</p></div><div class="feature-list"><div><b>01</b><span><strong>Análise da demanda</strong>Entendemos resíduo, volume, frequência, armazenamento e documentação antes de indicar a solução.</span></div><div><b>02</b><span><strong>Seleção de parceiros</strong>Buscamos parceiros especializados de acordo com as características e exigências de cada operação.</span></div><div><b>03</b><span><strong>Valorização quando aplicável</strong>Avaliamos possibilidades de reciclagem, reaproveitamento e recuperação quando houver viabilidade para o material e a operação.</span></div><div><b>04</b><span><strong>Acompanhamento e conformidade</strong>Foco em comunicação, rastreabilidade documental e destinação ambientalmente adequada.</span></div></div></div></section>
-<section class="section" id="atuacao"><div class="container two-col area"><div><span class="eyebrow">Área de atuação</span><h2>Atendimento em São Paulo e região.</h2><p>Estruturamos soluções de gerenciamento, coleta, transporte e destinação na capital, Grande São Paulo e demais regiões atendidas por nossa rede de parceiros.</p><ul class="check-list"><li>São Paulo Capital</li><li>Osasco e Carapicuíba</li><li>Região do ABC</li><li>Outras localidades sob consulta</li></ul></div><div class="area-panel"><span>Atendimento comercial</span><h3>Tem um resíduo e precisa definir a melhor solução?</h3><p>Envie o tipo de resíduo, volume aproximado, frequência e local da operação. Avaliamos a solução de gerenciamento e, quando aplicável, alternativas de valorização do material.</p><a class="btn" href="https://wa.me/5511994576047?text=Ol%C3%A1%2C%20preciso%20avaliar%20uma%20solu%C3%A7%C3%A3o%20para%20gerenciamento%20de%20res%C3%ADduos." target="_blank">Solicitar atendimento</a></div></div></section>
-<section class="cta section" id="contato"><div class="container cta-box"><div><span class="eyebrow light">Vamos conversar?</span><h2>Conte sua demanda. Nós avaliamos o cenário e estruturamos uma solução ambiental adequada para sua empresa.</h2></div><div class="contact-links"><a href="tel:+5511994576047">☎ (11) 99457-6047</a><a href="mailto:apoiosustentabilidade@gmail.com">✉ apoiosustentabilidade@gmail.com</a><span>📍 São Paulo - SP</span></div></div></section>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Gerenciamento de resíduos com soluções sob medida</span>
+        <h1>Gestão inteligente de resíduos para sua empresa</h1>
+        <p>Oferecemos soluções de gerenciamento de resíduos e conectamos cada operação a parceiros especializados para coleta, transporte, tratamento e destinação de resíduos Classe I e Classe II. Também avaliamos oportunidades de valorização, reaproveitamento e reciclagem quando houver viabilidade.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/5511994576047?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn btn-outline" href="#servicos">Conhecer serviços</a>
+        </div>
+        <div class="hero-badges">
+          <span>✓ Atendimento em São Paulo e região</span>
+          <span>✓ Resíduos Classe I e II</span>
+          <span>✓ Parceiros especializados para cada operação</span>
+        </div>
+      </div>
+
+      <aside class="quote-card" id="cotacao">
+        <h2>Solicite uma cotação</h2>
+        <p>Preencha os dados para entendermos sua demanda antes do primeiro contato.</p>
+        <form id="leadForm">
+          <label>Empresa<input type="text" id="empresa" placeholder="Nome da empresa" autocomplete="organization" required /></label>
+          <label>CNPJ<input type="text" id="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required /></label>
+          <label>Nome / responsável<input type="text" id="nome" placeholder="Seu nome" autocomplete="name" required /></label>
+          <label>Telefone / WhatsApp<input type="tel" id="telefone" placeholder="(11) 99999-9999" autocomplete="tel" required /></label>
+          <label>E-mail<input type="email" id="email" placeholder="nome@empresa.com.br" autocomplete="email" required /></label>
+          <label>Tipo de resíduo / serviço
+            <select id="servico" required>
+              <option value="">Selecione</option>
+              <option>Gerenciamento de resíduos</option>
+              <option>Coleta e transporte de resíduos</option>
+              <option>Destinação de resíduos Classe I</option>
+              <option>Destinação de resíduos Classe II</option>
+              <option>Valorização de resíduos</option>
+              <option>Avaliação para reaproveitamento / reciclagem</option>
+              <option>Resíduos industriais</option>
+              <option>Lixo comum</option>
+              <option>Resíduos eletrônicos</option>
+              <option>Caçambas e containers</option>
+              <option>Caminhão auto vácuo / sucção</option>
+              <option>Hidrojateamento / limpeza técnica</option>
+              <option>CADRI / MTR / Gestão documental</option>
+              <option>Outro serviço</option>
+            </select>
+          </label>
+          <label>Cidade / local da operação<input type="text" id="cidade" placeholder="Ex.: São Paulo - SP" autocomplete="address-level2" required /></label>
+          <label>Conte brevemente sua necessidade<textarea id="demanda" rows="5" placeholder="Ex.: tipo de resíduo, quantidade aproximada, frequência, armazenamento, equipamento necessário, destinação desejada ou interesse em valorização." required></textarea></label>
+          <label class="consent"><input type="checkbox" id="consentimento" required /><span>Concordo com o uso destes dados para atendimento da minha solicitação, conforme a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</span></label>
+          <button class="btn btn-full" type="submit">Solicitar avaliação pelo WhatsApp</button>
+        </form>
+      </aside>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div><strong>Diagnóstico</strong><span>Entendemos a necessidade antes de definir a solução</span></div>
+      <div><strong>Rede parceira</strong><span>Parceiros especializados para cada tipo de operação</span></div>
+      <div><strong>Conformidade</strong><span>Foco em documentação, rastreabilidade e destinação adequada</span></div>
+      <div><strong>Valorização</strong><span>Avaliamos alternativas de reaproveitamento, reciclagem e recuperação</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Nossas soluções</span>
+        <h2>Gerenciamento de resíduos pensado para a realidade da sua operação.</h2>
+        <p>Avaliamos tipo de resíduo, volume, frequência, armazenamento, documentação e objetivo da empresa para estruturar a solução mais adequada.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">♻</div><h3>Gerenciamento de resíduos</h3><p>Estruturação da operação desde o diagnóstico da demanda até a definição de coleta, transporte, tratamento e destinação final.</p></article>
+        <article class="card"><div class="icon">🤝</div><h3>Coleta e transporte</h3><p>Articulação com parceiros especializados conforme o tipo de resíduo, volume, rota e equipamento necessário.</p></article>
+        <article class="card"><div class="icon">⚠</div><h3>Resíduos Classe I</h3><p>Soluções para resíduos perigosos com foco em segurança, conformidade documental, transporte e destinação adequada.</p></article>
+        <article class="card"><div class="icon">🌿</div><h3>Resíduos Classe II</h3><p>Gestão de resíduos não perigosos com avaliação de reciclagem, reaproveitamento, recuperação ou destinação.</p></article>
+        <article class="card"><div class="icon">↻</div><h3>Valorização de resíduos</h3><p>Avaliamos materiais para identificar oportunidades de reaproveitamento, reciclagem, recuperação ou outras formas de valorização quando houver viabilidade.</p></article>
+        <article class="card"><div class="icon">📋</div><h3>CADRI, MTR e documentação</h3><p>Apoio no fluxo documental para manter a operação organizada, rastreável e adequada às exigências de cada atendimento.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="diferenciais">
+    <div class="container two-col">
+      <div><span class="eyebrow light">Por que escolher a Apoio</span><h2>Mais do que contratar uma coleta: estruturamos a solução da operação.</h2><p class="lead">Atuamos como ponto de apoio entre a necessidade da sua empresa e a solução operacional adequada, conectando cada demanda a parceiros compatíveis com o serviço.</p></div>
+      <div class="feature-list">
+        <div><b>01</b><span><strong>Análise da demanda</strong>Entendemos resíduo, volume, frequência, armazenamento e documentação antes de indicar a solução.</span></div>
+        <div><b>02</b><span><strong>Seleção de parceiros</strong>Buscamos parceiros especializados de acordo com as características de cada operação.</span></div>
+        <div><b>03</b><span><strong>Valorização quando aplicável</strong>Avaliamos possibilidades de reciclagem, reaproveitamento e recuperação quando houver viabilidade.</span></div>
+        <div><b>04</b><span><strong>Acompanhamento e conformidade</strong>Foco em comunicação, rastreabilidade documental e destinação ambientalmente adequada.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="atuacao">
+    <div class="container two-col area">
+      <div><span class="eyebrow">Área de atuação</span><h2>Atendimento em São Paulo e região.</h2><p>Estruturamos soluções de gerenciamento, coleta, transporte e destinação na capital, Grande São Paulo e demais regiões atendidas por nossa rede de parceiros.</p><ul class="check-list"><li>São Paulo Capital</li><li>Osasco e Carapicuíba</li><li>Região do ABC</li><li>Jundiaí e região</li><li>Outras localidades sob consulta</li></ul></div>
+      <div class="area-panel"><span>Atendimento comercial</span><h3>Tem um resíduo e precisa definir a melhor solução?</h3><p>Envie o tipo de resíduo, volume aproximado, frequência e local da operação. Avaliamos a solução de gerenciamento e, quando aplicável, alternativas de valorização.</p><a class="btn" href="#cotacao">Solicitar atendimento</a></div>
+    </div>
+  </section>
+
+  <section class="cta section" id="contato">
+    <div class="container cta-box">
+      <div><span class="eyebrow light">Vamos conversar?</span><h2>Conte sua demanda. Nós avaliamos o cenário e estruturamos uma solução ambiental adequada para sua empresa.</h2></div>
+      <div class="contact-links"><a href="tel:+5511994576047">☎ (11) 99457-6047</a><a href="mailto:apoiosustentabilidade@gmail.com">✉ apoiosustentabilidade@gmail.com</a><span>📍 São Paulo - SP</span></div>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="container footer-grid"><div><div class="brand footer-brand"><img class="footer-logo" src="logo-apoio.png" alt="Apoio Sustentabilidade" /></div><p>Gerenciamento de resíduos com soluções integradas, rede de parceiros especializados e foco em destinação adequada e valorização quando aplicável.</p></div><div><strong>Serviços</strong><a href="#servicos">Gerenciamento de resíduos</a><a href="#servicos">Classe I e Classe II</a><a href="#servicos">Valorização de resíduos</a></div><div><strong>Contato</strong><a href="tel:+5511994576047">(11) 99457-6047</a><a href="mailto:apoiosustentabilidade@gmail.com">apoiosustentabilidade@gmail.com</a><span>São Paulo - SP</span></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Apoio Sustentabilidade.</span><a href="privacidade.html">Política de Privacidade</a></div></footer>
-<a class="whatsapp-float" href="https://wa.me/5511994576047?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Apoio%20Sustentabilidade." target="_blank">WhatsApp</a>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><img class="footer-logo" src="logo-apoio.png" alt="Apoio Sustentabilidade" /><p>Gerenciamento de resíduos com soluções integradas, rede de parceiros especializados e foco em destinação adequada e valorização quando aplicável.</p></div>
+    <div><strong>Serviços</strong><a href="#servicos">Gerenciamento de resíduos</a><a href="#servicos">Classe I e Classe II</a><a href="#servicos">Valorização de resíduos</a></div>
+    <div><strong>Contato</strong><a href="tel:+5511994576047">(11) 99457-6047</a><a href="mailto:apoiosustentabilidade@gmail.com">apoiosustentabilidade@gmail.com</a><span>São Paulo - SP</span></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span id="year"></span> Apoio Sustentabilidade.</span><a href="privacidade.html">Política de Privacidade</a></div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/5511994576047?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Apoio%20Sustentabilidade." target="_blank" rel="noopener">WhatsApp</a>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
