@@ -209,3 +209,17 @@ a{text-decoration:none;color:inherit}
     font-size:35px !important;
   }
 }
+/* CORREÇÃO DA NAVEGAÇÃO PELO MENU */
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:95px !important;
+}
+
+#inicio,
+#servicos,
+#diferenciais,
+#atuacao,
+#contato{
+  scroll-margin-top:95px !important;
+}
