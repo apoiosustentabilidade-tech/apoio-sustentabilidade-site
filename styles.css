@@ -2209,3 +2209,22 @@ color: #ffffff;
     0 10px 28px rgba(0, 0, 0, 0.28),
     0 0 0 5px rgba(32, 196, 90, 0.18) !important;
 }
+
+/* =========================================================
+   POSIÇÃO DO WHATSAPP FLUTUANTE
+   ========================================================= */
+
+.whatsapp-float {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 28px !important;
+  z-index: 9999 !important;
+}
+
+/* No celular */
+@media (max-width: 720px) {
+  .whatsapp-float {
+    right: 14px !important;
+    bottom: 18px !important;
+  }
+}
