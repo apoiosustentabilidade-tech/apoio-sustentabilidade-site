@@ -1684,3 +1684,92 @@ textarea {
     bottom: 14px;
   }
 }
+
+/* =========================================================
+   HERO HOME - AJUSTE VISUAL FINAL
+   ========================================================= */
+
+.hero.hero-v2 {
+  position: relative !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 62, 42, 0.94) 0%,
+      rgba(8, 62, 42, 0.86) 28%,
+      rgba(8, 62, 42, 0.68) 45%,
+      rgba(8, 62, 42, 0.28) 60%,
+      rgba(8, 62, 42, 0.00) 76%
+    ),
+    url("/banner-home-apoio.png") center center / cover no-repeat !important;
+
+  color: #ffffff !important;
+}
+
+.hero.hero-v2::before {
+  display: none !important;
+}
+
+.hero.hero-v2 .hero-eyebrow {
+  color: #96efb9 !important;
+}
+
+.hero.hero-v2 h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18) !important;
+}
+
+.hero.hero-v2 h1 strong {
+  color: #5be08d !important;
+}
+
+.hero.hero-v2 .hero-lead {
+  color: #ffffff !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.18) !important;
+}
+
+.hero.hero-v2 .hero-description {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.hero.hero-v2 .hero-feature {
+  border-top-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+.hero.hero-v2 .hero-feature strong {
+  color: #ffffff !important;
+}
+
+.hero.hero-v2 .hero-feature small {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
+.hero.hero-v2 .feature-icon {
+  background: rgba(102, 226, 148, 0.18) !important;
+  color: #7ce7a5 !important;
+}
+
+.hero.hero-v2 .btn-outline {
+  background: rgba(9, 58, 40, 0.34) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.hero.hero-v2 .quote-card,
+.hero.hero-v2 .quote-card-v2 {
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: #173126 !important;
+}
+
+/* CELULAR */
+@media (max-width: 820px) {
+  .hero.hero-v2 {
+    background:
+      linear-gradient(
+        rgba(7, 58, 39, 0.86),
+        rgba(7, 58, 39, 0.86)
+      ),
+      url("/banner-home-apoio.png") 62% center / cover no-repeat !important;
+  }
+}
