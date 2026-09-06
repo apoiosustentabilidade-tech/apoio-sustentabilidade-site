@@ -204,16 +204,17 @@ textarea {
 .hero {
   position: relative;
   overflow: hidden;
+
   background:
     linear-gradient(
       90deg,
-      rgba(6, 38, 27, 0.97) 0%,
-      rgba(6, 38, 27, 0.93) 36%,
-      rgba(6, 38, 27, 0.76) 58%,
-      rgba(6, 38, 27, 0.45) 78%,
-      rgba(6, 38, 27, 0.24) 100%
+      rgba(4, 35, 24, 0.30) 0%,
+      rgba(4, 35, 24, 0.16) 42%,
+      rgba(4, 35, 24, 0.05) 70%,
+      rgba(4, 35, 24, 0.00) 100%
     ),
-    url("banner-apoio-sustentabilidade.png") center center / cover no-repeat;
+    url("banner-apoio-sustentabilidade.png") 58% center / cover no-repeat;
+
   color: var(--white);
 }
 
