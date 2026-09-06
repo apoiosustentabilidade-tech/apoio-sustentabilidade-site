@@ -260,6 +260,50 @@ textarea {
   color: var(--green);
   border-color: var(--green);
 }
+    url("/banner-home-apoio.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  color: var(--ink);
+}
+.hero-eyebrow {
+  color: var(--green);
+}
+
+.hero h1 {
+  color: #102a20;
+}
+
+.hero h1 strong {
+  color: var(--green-2);
+}
+
+.hero-lead {
+  color: #173126;
+}
+
+.hero-description {
+  color: #50635a;
+}
+
+.hero-feature {
+  border-top-color: rgba(23, 131, 79, 0.18);
+}
+
+.hero-feature strong {
+  color: #173126;
+}
+
+.hero-feature small {
+  color: #68776f;
+}
+
+.hero .btn-outline {
+  color: var(--green);
+  border-color: var(--green);
+}
 .hero-v2 {
   padding: 42px 0 50px;
 }
