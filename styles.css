@@ -1,27 +1,30 @@
 :root {
-  --green: #17834f;
-  --green-2: #22a864;
-  --green-3: #0f5f3a;
+  --green: #16854f;
+  --green-light: #26b768;
+  --green-dark: #0c5b38;
   --green-soft: #eaf6ef;
 
-  --dark: #0b2f22;
-  --dark-2: #123d2e;
+  --dark: #102d22;
+  --dark-2: #174635;
 
-  --ink: #173126;
-  --muted: #6a7a71;
-  --line: #dce7e0;
+  --text: #173126;
+  --muted: #65766d;
+  --line: #dce8e1;
 
-  --soft: #f5f9f6;
+  --light: #f6faf7;
   --white: #ffffff;
 
   --shadow-sm: 0 8px 22px rgba(15, 53, 39, 0.08);
-  --shadow: 0 16px 36px rgba(15, 53, 39, 0.12);
-  --shadow-lg: 0 24px 60px rgba(15, 53, 39, 0.18);
+  --shadow-md: 0 16px 38px rgba(15, 53, 39, 0.12);
+  --shadow-lg: 0 24px 60px rgba(15, 53, 39, 0.16);
 
-  --radius: 20px;
+  --radius: 18px;
 }
 
-/* RESET */
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -29,13 +32,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 92px;
+  scroll-padding-top: 90px;
 }
 
 body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
-  color: var(--ink);
+  color: var(--text);
   background: var(--white);
   line-height: 1.6;
 }
@@ -62,15 +65,18 @@ textarea {
   margin-inline: auto;
 }
 
-/* HEADER */
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
 
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
 }
 
 .nav-wrap {
@@ -78,7 +84,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 26px;
 }
 
 .brand {
@@ -89,7 +95,7 @@ textarea {
 
 .brand-logo {
   width: 255px;
-  max-height: 66px;
+  max-height: 65px;
   object-fit: contain;
 }
 
@@ -111,7 +117,7 @@ textarea {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 22px;
+  bottom: 21px;
   width: 0;
   height: 2px;
   background: var(--green);
@@ -124,27 +130,43 @@ textarea {
 
 .menu-toggle {
   display: none;
+  padding: 4px;
   border: 0;
   background: transparent;
+  color: var(--dark);
   font-size: 28px;
   cursor: pointer;
 }
 
-/* BOTÕES */
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   min-height: 48px;
-  padding: 13px 22px;
+  padding: 12px 22px;
+
   border: 1px solid transparent;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--green-2), var(--green));
+
+  background: linear-gradient(
+    135deg,
+    var(--green-light),
+    var(--green)
+  );
+
   color: var(--white);
   font-weight: 800;
+
   cursor: pointer;
-  box-shadow: 0 9px 24px rgba(23, 131, 79, 0.22);
+
+  box-shadow: 0 9px 22px rgba(22, 133, 79, 0.2);
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -152,12 +174,12 @@ textarea {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(23, 131, 79, 0.28);
+  box-shadow: 0 14px 30px rgba(22, 133, 79, 0.27);
 }
 
 .btn-sm {
   min-height: 42px;
-  padding: 10px 16px;
+  padding: 10px 17px;
   font-size: 13px;
 }
 
@@ -168,27 +190,25 @@ textarea {
   box-shadow: none;
 }
 
-.hero .btn-outline,
-.section-dark .btn-outline,
-.final-cta .btn-outline {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.72);
-}
-
 .btn-whatsapp {
-  background: linear-gradient(135deg, #25d366, #159447);
+  background: linear-gradient(135deg, #25d366, #168d49);
 }
 
 .btn-email {
-  background: linear-gradient(135deg, #1a6fb3, #15578c);
+  background: linear-gradient(135deg, #2879b7, #155b91);
 }
 
-/* EYEBROW */
+
+/* =========================================================
+   TEXTOS DE DESTAQUE
+   ========================================================= */
 
 .eyebrow {
   display: inline-block;
   margin-bottom: 12px;
+
   color: var(--green);
+
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -196,184 +216,109 @@ textarea {
 }
 
 .eyebrow.light {
-  color: #9df0bf;
+  color: #9af0bc;
 }
 
-/* HERO COM IMAGEM DE FUNDO */
+
+/* =========================================================
+   HERO PADRÃO - PÁGINAS INTERNAS
+   ========================================================= */
 
 .hero {
   position: relative;
   overflow: hidden;
 
-  background-color: #eef8f1;
+  padding: 58px 0;
 
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(245, 251, 247, 0.96) 0%,
-      rgba(245, 251, 247, 0.88) 32%,
-      rgba(245, 251, 247, 0.52) 55%,
-      rgba(245, 251, 247, 0.10) 78%,
-      rgba(245, 251, 247, 0.00) 100%
+  background:
+    radial-gradient(
+      circle at 84% 18%,
+      rgba(38, 183, 104, 0.18),
+      transparent 30%
     ),
-    url("/banner-home-apoio.png");
+    linear-gradient(
+      125deg,
+      #092c20 0%,
+      #10563b 100%
+    );
 
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  color: var(--ink);
-}
-.hero-eyebrow {
-  color: var(--green);
-}
-
-.hero h1 {
-  color: #102a20;
-}
-
-.hero h1 strong {
-  color: var(--green-2);
-}
-
-.hero-lead {
-  color: #173126;
-}
-
-.hero-description {
-  color: #50635a;
-}
-
-.hero-feature {
-  border-top-color: rgba(23, 131, 79, 0.18);
-}
-
-.hero-feature strong {
-  color: #173126;
-}
-
-.hero-feature small {
-  color: #68776f;
-}
-
-.hero .btn-outline {
-  color: var(--green);
-  border-color: var(--green);
-}
-    url("/banner-home-apoio.png");
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  color: var(--ink);
-}
-.hero-eyebrow {
-  color: var(--green);
-}
-
-.hero h1 {
-  color: #102a20;
-}
-
-.hero h1 strong {
-  color: var(--green-2);
-}
-
-.hero-lead {
-  color: #173126;
-}
-
-.hero-description {
-  color: #50635a;
-}
-
-.hero-feature {
-  border-top-color: rgba(23, 131, 79, 0.18);
-}
-
-.hero-feature strong {
-  color: #173126;
-}
-
-.hero-feature small {
-  color: #68776f;
-}
-
-.hero .btn-outline {
-  color: var(--green);
-  border-color: var(--green);
-}
-.hero-v2 {
-  padding: 42px 0 50px;
+  color: var(--white);
 }
 
 .hero-grid {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
+
   gap: 42px;
   align-items: start;
 }
 
-.hero-copy-v2 {
-  padding-top: 24px;
+.hero-copy {
   max-width: 700px;
-}
-
-.hero-eyebrow {
-  color: #9ff2c1;
-  font-size: 13px;
 }
 
 .hero h1 {
   margin: 0;
-  max-width: 700px;
+
   font-size: clamp(42px, 4.8vw, 64px);
   font-weight: 800;
-  line-height: 1.02;
+  line-height: 1.03;
   letter-spacing: -0.04em;
+
+  color: var(--white);
 }
 
 .hero h1 strong {
   display: block;
-  color: #79e6a1;
+  color: #79e6a3;
 }
 
 .hero-lead {
   margin: 20px 0 0;
-  max-width: 650px;
+
   font-size: 20px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.96);
+
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .hero-description {
   margin: 12px 0 0;
-  max-width: 650px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+
   margin-top: 26px;
+}
+
+.hero .btn-outline {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.76);
 }
 
 .hero-features {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+
   gap: 12px;
+
   margin-top: 28px;
 }
 
 .hero-feature {
   display: flex;
   gap: 10px;
+
   padding: 14px 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .hero-feature strong,
@@ -387,28 +332,143 @@ textarea {
 
 .hero-feature small {
   margin-top: 2px;
-  color: rgba(255, 255, 255, 0.75);
+
+  color: rgba(255, 255, 255, 0.7);
+
   font-size: 12px;
 }
 
 .feature-icon {
   width: 26px;
   height: 26px;
+
   flex: 0 0 26px;
+
   display: grid;
   place-items: center;
+
   border-radius: 50%;
-  background: rgba(114, 225, 155, 0.18);
-  color: #80e7a6;
+
+  background: rgba(121, 230, 163, 0.18);
+  color: #82e8a8;
+
   font-weight: 900;
 }
 
-/* FORMULÁRIO */
+
+/* =========================================================
+   HOME - HERO NOVO CLARO COM FOTOGRAFIA
+   ========================================================= */
+
+.hero.hero-v2 {
+  position: relative;
+
+  padding: 42px 0 48px;
+
+  background-color: #f2f8f4;
+
+  background-image:
+    url("/banner-home-apoio.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  color: var(--text);
+}
+
+
+/* camada clara SOMENTE no lado do texto */
+
+.hero.hero-v2::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.94) 22%,
+      rgba(255, 255, 255, 0.86) 37%,
+      rgba(255, 255, 255, 0.58) 50%,
+      rgba(255, 255, 255, 0.18) 62%,
+      rgba(255, 255, 255, 0.00) 74%
+    );
+}
+
+.hero.hero-v2 .hero-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-copy-v2 {
+  padding-top: 22px;
+}
+
+.hero.hero-v2 .hero-eyebrow {
+  color: #087c43;
+}
+
+.hero.hero-v2 h1 {
+  color: #102d22;
+  text-shadow: none;
+}
+
+.hero.hero-v2 h1 strong {
+  color: #1fb867;
+}
+
+.hero.hero-v2 .hero-lead {
+  color: #18382c;
+  text-shadow: none;
+}
+
+.hero.hero-v2 .hero-description {
+  color: #4c6357;
+  text-shadow: none;
+}
+
+.hero.hero-v2 .hero-feature {
+  border-top-color: rgba(22, 133, 79, 0.2);
+}
+
+.hero.hero-v2 .hero-feature strong {
+  color: #173126;
+}
+
+.hero.hero-v2 .hero-feature small {
+  color: #5e7468;
+}
+
+.hero.hero-v2 .feature-icon {
+  background: rgba(31, 184, 103, 0.12);
+  color: #16854f;
+}
+
+.hero.hero-v2 .btn-outline {
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--green);
+  border-color: var(--green);
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
 
 .quote-card {
-  background: var(--white);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--text);
+
+  border: 1px solid rgba(220, 232, 225, 0.95);
   border-radius: 22px;
+
   box-shadow: var(--shadow-lg);
 }
 
@@ -416,14 +476,23 @@ textarea {
   padding: 26px;
 }
 
+.quote-card .eyebrow {
+  color: var(--green);
+}
+
 .quote-card h2 {
   margin: 0;
+
+  color: #102d22;
+
   font-size: 29px;
   line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .quote-intro {
   margin: 9px 0 20px;
+
   color: var(--muted);
   font-size: 14px;
 }
@@ -436,6 +505,7 @@ textarea {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   gap: 11px;
 }
 
@@ -445,17 +515,21 @@ textarea {
 }
 
 .form-field label {
+  color: #152f24;
+
   font-size: 13px;
   font-weight: 700;
 }
 
 .form-field label span {
-  color: #d93025;
+  color: #cf3028;
 }
 
 .form-field label small {
   margin-left: 4px;
+
   color: var(--muted);
+
   font-size: 11px;
   font-weight: 500;
 }
@@ -464,11 +538,29 @@ textarea {
 .form-field select,
 .form-field textarea {
   width: 100%;
+
+  padding: 10px 12px;
+
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fbfdfb;
-  padding: 10px 12px;
+
+  background: #fcfefd;
+  color: var(--text);
+
   outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--green-light);
+
+  box-shadow:
+    0 0 0 3px rgba(38, 183, 104, 0.12);
 }
 
 .form-field textarea {
@@ -476,27 +568,25 @@ textarea {
   resize: vertical;
 }
 
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  border-color: var(--green-2);
-  box-shadow: 0 0 0 3px rgba(34, 168, 100, 0.12);
-}
-
 .send-choice {
   padding: 12px 14px;
-  border-radius: 12px;
-  background: #f2f8f4;
+
   border: 1px solid var(--line);
+  border-radius: 12px;
+
+  background: #f3f8f5;
 }
 
 .send-choice strong {
   display: block;
+
+  color: #173126;
   font-size: 14px;
 }
 
 .send-choice p {
   margin: 3px 0 0;
+
   color: var(--muted);
   font-size: 12px;
 }
@@ -504,20 +594,26 @@ textarea {
 .form-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 10px;
 }
 
 .form-required {
   margin: 0;
-  text-align: right;
+
   color: var(--muted);
+
+  text-align: right;
   font-size: 11px;
 }
 
-/* TRUST */
+
+/* =========================================================
+   FAIXA DE CONFIANÇA
+   ========================================================= */
 
 .trust-strip {
-  background: #f3f8f5;
+  background: #f1f8f4;
   border-bottom: 1px solid var(--line);
 }
 
@@ -528,6 +624,7 @@ textarea {
 
 .trust-item {
   padding: 22px 24px;
+
   border-right: 1px solid var(--line);
 }
 
@@ -542,14 +639,21 @@ textarea {
 
 .trust-item strong {
   margin-bottom: 5px;
+
+  color: #123426;
 }
 
 .trust-item span {
   color: var(--muted);
+
   font-size: 13px;
+  line-height: 1.45;
 }
 
-/* SEÇÕES */
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
 
 .section {
   padding: 72px 0;
@@ -561,14 +665,25 @@ textarea {
 
 .section-dark {
   padding: 72px 0;
+
   background:
-    radial-gradient(circle at 12% 0%, rgba(34, 168, 100, 0.15), transparent 28%),
-    linear-gradient(135deg, var(--dark), var(--dark-2));
+    radial-gradient(
+      circle at 12% 0%,
+      rgba(38, 183, 104, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #0b3023,
+      #174835
+    );
+
   color: var(--white);
 }
 
 .section-heading {
   max-width: 780px;
+
   margin-bottom: 30px;
 }
 
@@ -584,32 +699,57 @@ textarea {
 .regions-section h2,
 .final-cta h2 {
   margin: 0;
+
+  color: #123025;
+
   font-size: clamp(34px, 4vw, 50px);
   line-height: 1.08;
   letter-spacing: -0.03em;
 }
 
+.section-dark .section-heading h2,
+.section-dark .value-content h2,
+.final-cta h2 {
+  color: var(--white);
+}
+
 .section-heading p {
   margin: 14px 0 0;
+
   color: var(--muted);
 }
 
-/* CARDS COM FOTOS */
+.section-dark .section-heading p,
+.section-dark .lead {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   SERVIÇOS COM FOTOGRAFIAS
+   ========================================================= */
 
 .service-photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 18px;
 }
 
 .service-photo-card {
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
+
   border: 1px solid var(--line);
   border-radius: 18px;
+
   background: var(--white);
-  box-shadow: 0 8px 24px rgba(15, 53, 39, 0.06);
+
+  box-shadow:
+    0 7px 22px rgba(15, 53, 39, 0.06);
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -617,44 +757,60 @@ textarea {
 
 .service-photo-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
 }
 
 .service-photo {
   position: relative;
+
   height: 145px;
+
   overflow: hidden;
-  background: #dce9e1;
+
+  background: #dfeae3;
 }
 
 .service-photo img {
   width: 100%;
   height: 145px;
+
   object-fit: cover;
   object-position: center;
 }
 
 .service-photo::after {
   content: "";
+
   position: absolute;
-  inset: auto 0 0 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   height: 42%;
-  background: linear-gradient(
-    to top,
-    rgba(5, 32, 22, 0.55),
-    transparent
-  );
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(7, 42, 29, 0.54),
+      transparent
+    );
 }
 
 .service-photo-tag {
   position: absolute;
   left: 14px;
   bottom: 12px;
-  z-index: 1;
+
+  z-index: 2;
+
   padding: 5px 10px;
+
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--green-3);
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: var(--green-dark);
+
   font-size: 11px;
   font-weight: 800;
 }
@@ -663,77 +819,105 @@ textarea {
   display: flex;
   flex: 1;
   flex-direction: column;
+
   padding: 18px 20px 20px;
 }
 
 .service-photo-content h3 {
   margin: 0;
+
+  color: #123025;
+
   font-size: 20px;
   line-height: 1.2;
 }
 
 .service-photo-content p {
   margin: 8px 0 0;
+
   color: var(--muted);
+
   font-size: 14px;
   line-height: 1.45;
 }
 
 .card-link {
   display: inline-block;
+
   margin-top: auto;
   padding-top: 16px;
+
   color: var(--green);
+
   font-size: 13px;
   font-weight: 800;
 }
 
-/* SOLUÇÕES OPERACIONAIS */
+
+/* =========================================================
+   SOLUÇÕES OPERACIONAIS
+   ========================================================= */
 
 .operation-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   gap: 16px;
 }
 
 .operation-card {
   display: flex;
   flex-direction: column;
+
   min-height: 215px;
+
   padding: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+
   background: rgba(255, 255, 255, 0.07);
+
   color: var(--white);
+
   transition:
     transform 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .operation-card:hover {
   transform: translateY(-4px);
+
   background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(154, 240, 188, 0.35);
 }
 
 .operation-visual {
   width: 62px;
   height: 62px;
+
   display: grid;
   place-items: center;
+
   margin-bottom: 16px;
+
+  border: 1px solid rgba(154, 240, 188, 0.24);
   border-radius: 16px;
-  background: rgba(140, 235, 181, 0.1);
-  border: 1px solid rgba(140, 235, 181, 0.22);
-  color: #9cf1be;
+
+  background: rgba(154, 240, 188, 0.1);
+
+  color: #9af0bc;
 }
 
 .operation-visual svg {
   width: 40px;
   height: 40px;
+
   display: block;
+
   fill: none !important;
   stroke: currentColor !important;
-  color: #9cf1be;
 }
 
 .operation-visual svg * {
@@ -742,14 +926,19 @@ textarea {
 }
 
 .operation-card strong {
+  color: var(--white);
+
   font-size: 17px;
   line-height: 1.22;
 }
 
 .operation-card small {
   display: block;
+
   margin-top: 9px;
+
   color: rgba(255, 255, 255, 0.74);
+
   font-size: 13px;
   line-height: 1.45;
 }
@@ -757,17 +946,24 @@ textarea {
 .operation-link {
   margin-top: auto;
   padding-top: 14px;
-  color: #9cf1be;
+
+  color: #9af0bc;
+
   font-size: 12px;
   font-weight: 800;
 }
 
-/* SOBRE */
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
 
 .about-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
+
   gap: 48px;
+
   align-items: center;
 }
 
@@ -778,15 +974,19 @@ textarea {
 .about-panel {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   gap: 14px;
 }
 
 .about-highlight {
   min-height: 150px;
+
   padding: 22px;
-  border-radius: 16px;
-  background: var(--soft);
+
   border: 1px solid var(--line);
+  border-radius: 16px;
+
+  background: var(--light);
 }
 
 .about-highlight strong,
@@ -796,6 +996,8 @@ textarea {
 
 .about-highlight strong {
   margin-bottom: 8px;
+
+  color: #123025;
 }
 
 .about-highlight span {
@@ -803,7 +1005,10 @@ textarea {
   font-size: 13px;
 }
 
-/* PROCESSO */
+
+/* =========================================================
+   PROCESSO
+   ========================================================= */
 
 .process-section {
   background: #f8fbf9;
@@ -812,45 +1017,62 @@ textarea {
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   gap: 16px;
 }
 
 .process-card {
   padding: 24px;
-  border-radius: 18px;
-  background: var(--white);
+
   border: 1px solid var(--line);
+  border-radius: 18px;
+
+  background: var(--white);
 }
 
 .process-card > span {
-  display: inline-flex;
   width: 46px;
   height: 46px;
+
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 16px;
+
   border-radius: 50%;
+
   background: var(--green);
   color: var(--white);
+
   font-weight: 800;
 }
 
 .process-card h3 {
   margin: 0;
+
+  color: #123025;
 }
 
 .process-card p {
   margin-bottom: 0;
+
   color: var(--muted);
+
   font-size: 13px;
 }
 
-/* VALORIZAÇÃO */
+
+/* =========================================================
+   VALORIZAÇÃO
+   ========================================================= */
 
 .value-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
+
   gap: 48px;
+
   align-items: center;
 }
 
@@ -860,36 +1082,62 @@ textarea {
 
 .value-panel {
   padding: 30px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
+
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.value-panel > strong {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--white);
+  font-size: 20px;
 }
 
 .check-list {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 .check-list li {
   position: relative;
+
   padding: 11px 0 11px 26px;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.check-list li:last-child {
+  border-bottom: 0;
 }
 
 .check-list li::before {
   content: "✓";
+
   position: absolute;
   left: 0;
+
   color: #7de7a7;
+  font-weight: 800;
 }
 
-/* DOCUMENTAÇÃO */
+
+/* =========================================================
+   DOCUMENTAÇÃO
+   ========================================================= */
 
 .documentation-grid {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
+
   gap: 48px;
+
   align-items: center;
 }
 
@@ -900,15 +1148,19 @@ textarea {
 .document-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   gap: 14px;
 }
 
 .document-card {
   min-height: 145px;
+
   padding: 22px;
-  border-radius: 16px;
-  background: var(--soft);
+
   border: 1px solid var(--line);
+  border-radius: 16px;
+
+  background: var(--light);
 }
 
 .document-card strong,
@@ -918,10 +1170,21 @@ textarea {
 
 .document-card strong {
   margin-bottom: 8px;
+
   color: var(--green);
+
+  font-size: 20px;
 }
 
-/* REGIÕES */
+.document-card span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   REGIÕES
+   ========================================================= */
 
 .regions-section {
   background: #f7faf8;
@@ -930,7 +1193,9 @@ textarea {
 .regions-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
+
   gap: 46px;
+
   align-items: center;
 }
 
@@ -941,126 +1206,207 @@ textarea {
 .region-list {
   display: flex;
   flex-wrap: wrap;
+
   gap: 10px;
 }
 
 .region-list span {
   padding: 10px 14px;
-  border-radius: 999px;
-  background: var(--white);
+
   border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: var(--white);
+
+  color: #173126;
+
   font-size: 13px;
   font-weight: 600;
 }
 
-/* CTA FINAL */
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
 
 .final-cta {
   padding: 66px 0;
+
   background:
-    radial-gradient(circle at 90% 10%, rgba(34, 168, 100, 0.2), transparent 28%),
-    linear-gradient(135deg, #0c3124, #0f5a3b);
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(38, 183, 104, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #0c3124,
+      #105a3b
+    );
+
   color: var(--white);
 }
 
 .final-cta-box {
   display: grid;
   grid-template-columns: 1fr auto;
+
   gap: 30px;
+
   align-items: center;
+}
+
+.final-cta p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .final-cta-actions {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+
+  gap: 12px;
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .footer {
   padding: 52px 0 18px;
+
   background: #081f17;
+
   color: rgba(255, 255, 255, 0.76);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
   gap: 34px;
 }
 
 .footer-logo {
   width: 220px;
+
   margin-bottom: 14px;
+
   filter: brightness(0) invert(1);
+}
+
+.footer p {
+  max-width: 320px;
+
+  font-size: 14px;
 }
 
 .footer strong {
   display: block;
+
   margin-bottom: 12px;
+
   color: var(--white);
 }
 
 .footer a {
   display: block;
+
   margin: 7px 0;
+
   font-size: 14px;
+}
+
+.footer a:hover {
+  color: #8be9b0;
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
+
   gap: 24px;
+
   margin-top: 40px;
   padding-top: 18px;
+
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+
   font-size: 12px;
 }
 
-/* WHATSAPP */
+
+/* =========================================================
+   WHATSAPP FLUTUANTE
+   ========================================================= */
 
 .whatsapp-float {
   position: fixed;
   right: 18px;
   bottom: 18px;
+
   z-index: 1200;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   min-height: 50px;
+
   padding: 13px 18px;
+
   border-radius: 999px;
+
   background: #21bd5a;
   color: var(--white);
+
   font-size: 14px;
   font-weight: 800;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
-/* COMPATIBILIDADE COM PÁGINAS INTERNAS */
+
+/* =========================================================
+   COMPATIBILIDADE PÁGINAS INTERNAS
+   ========================================================= */
 
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   gap: 18px;
 }
 
 .card {
   padding: 24px;
-  border-radius: var(--radius);
-  background: var(--white);
+
   border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-sm);
 }
 
 .card .icon {
   width: 50px;
   height: 50px;
+
   display: grid;
   place-items: center;
+
   margin-bottom: 16px;
+
   border-radius: 13px;
+
   background: var(--green-soft);
+  color: var(--green);
+}
+
+.card h3 {
+  margin: 0;
 }
 
 .card p {
@@ -1069,36 +1415,65 @@ textarea {
 
 .area-panel {
   padding: 28px;
-  border-radius: 18px;
-  background: var(--soft);
+
   border: 1px solid var(--line);
+  border-radius: 18px;
+
+  background: var(--light);
+}
+
+.section-dark .area-panel {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 44px;
+
   align-items: center;
 }
 
 .cta {
   padding: 66px 0;
-  background: var(--soft);
+
+  background: var(--light);
 }
 
 .cta-box {
   display: grid;
   grid-template-columns: 1fr auto;
+
   gap: 30px;
+
+  align-items: center;
+
   padding: 36px;
-  border-radius: 20px;
-  background: var(--white);
+
   border: 1px solid var(--line);
+  border-radius: 20px;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-sm);
 }
 
-/* RESPONSIVO */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 1080px) {
+
   .nav {
     gap: 14px;
     font-size: 13px;
@@ -1116,7 +1491,29 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .service-photo-grid,
+  .hero.hero-v2 {
+    background-position: center center;
+  }
+
+  .hero.hero-v2::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.90) 45%,
+        rgba(255, 255, 255, 0.58) 68%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
+  }
+
+  .quote-card-v2 {
+    max-width: 760px;
+  }
+
+  .service-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .operation-grid,
   .process-grid,
   .cards {
@@ -1137,7 +1534,13 @@ textarea {
   }
 }
 
+
+/* =========================================================
+   CELULAR / TABLET PEQUENO
+   ========================================================= */
+
 @media (max-width: 820px) {
+
   .nav-wrap {
     min-height: 76px;
   }
@@ -1155,12 +1558,21 @@ textarea {
     top: 76px;
     left: 0;
     right: 0;
+
     display: none;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 0;
+
     padding: 14px 20px 20px;
+
     background: var(--white);
+
+    border-bottom: 1px solid var(--line);
+
+    box-shadow: var(--shadow-sm);
   }
 
   .nav.open {
@@ -1175,11 +1587,19 @@ textarea {
     display: none;
   }
 
-  .hero {
-    background-position: 68% center;
+  .hero.hero-v2 {
+    background-position: 60% center;
   }
 
-  .hero-features,
+  .hero.hero-v2::before {
+    background:
+      rgba(255, 255, 255, 0.86);
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+  }
+
   .form-grid,
   .form-actions,
   .document-grid,
@@ -1197,7 +1617,13 @@ textarea {
   }
 }
 
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
 @media (max-width: 620px) {
+
   .container {
     width: min(100% - 24px, 1180px);
   }
@@ -1207,12 +1633,20 @@ textarea {
   }
 
   .hero {
+    padding: 42px 0;
+  }
+
+  .hero.hero-v2 {
+    background-position: 60% center;
+  }
+
+  .hero.hero-v2::before {
     background:
-      linear-gradient(
-        rgba(6, 38, 27, 0.9),
-        rgba(6, 38, 27, 0.9)
-      ),
-      url("banner-apoio-sustentabilidade.png") 70% center / cover no-repeat;
+      rgba(255, 255, 255, 0.91);
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 11vw, 54px);
   }
 
   .service-photo-grid,
@@ -1241,142 +1675,12 @@ textarea {
     width: 100%;
   }
 
+  .quote-card-v2 {
+    padding: 22px;
+  }
+
   .whatsapp-float {
     right: 14px;
     bottom: 14px;
-  }
-}
-/* =========================================================
-   AJUSTE FINAL - HERO HOME APOIO SUSTENTABILIDADE
-   Mantém a fotografia e melhora a leitura dos textos
-   ========================================================= */
-
-.hero {
-  position: relative !important;
-  overflow: hidden !important;
-
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.97) 0%,
-      rgba(255, 255, 255, 0.94) 27%,
-      rgba(255, 255, 255, 0.82) 43%,
-      rgba(255, 255, 255, 0.42) 57%,
-      rgba(255, 255, 255, 0.08) 72%,
-      rgba(255, 255, 255, 0.00) 100%
-    ),
-    url("/banner-home-apoio.png") !important;
-
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #f3f8f5 !important;
-
-  color: #132d23 !important;
-}
-
-/* Texto pequeno acima do título */
-.hero .eyebrow,
-.hero .hero-eyebrow {
-  color: #087b42 !important;
-  font-weight: 800 !important;
-}
-
-/* Título principal */
-.hero h1 {
-  color: #102b21 !important;
-  text-shadow: none !important;
-}
-
-/* Parte verde do título */
-.hero h1 strong,
-.hero h1 span {
-  color: #19a65d !important;
-  text-shadow: none !important;
-}
-
-/* Subtítulo */
-.hero .lead,
-.hero .hero-lead {
-  color: #18392c !important;
-  text-shadow: none !important;
-}
-
-/* Texto explicativo */
-.hero p,
-.hero .hero-description {
-  color: #435c50 !important;
-  text-shadow: none !important;
-}
-
-/* Destaques inferiores */
-.hero .hero-feature,
-.hero .hero-badges {
-  color: #18392c !important;
-}
-
-.hero .hero-feature strong,
-.hero .hero-badges strong {
-  color: #18392c !important;
-}
-
-.hero .hero-feature small,
-.hero .hero-badges small {
-  color: #536a5e !important;
-}
-
-/* Botão principal */
-.hero .btn:not(.btn-outline) {
-  background: #139c59 !important;
-  color: #ffffff !important;
-  border-color: #139c59 !important;
-}
-
-/* Botão secundário */
-.hero .btn-outline {
-  background: rgba(255, 255, 255, 0.88) !important;
-  color: #087b42 !important;
-  border: 1px solid #087b42 !important;
-}
-
-/* Mantém o formulário branco e destacado */
-.hero .quote-card,
-.hero .quote-card-v2 {
-  background: rgba(255, 255, 255, 0.97) !important;
-  color: #102b21 !important;
-  box-shadow: 0 18px 50px rgba(16, 43, 33, 0.14) !important;
-}
-
-/* Textos do formulário */
-.hero .quote-card p,
-.hero .quote-card-v2 p {
-  color: #617168 !important;
-}
-
-.hero .quote-card label,
-.hero .quote-card-v2 label {
-  color: #102b21 !important;
-}
-
-/* CELULAR */
-@media (max-width: 768px) {
-  .hero {
-    background-image:
-      linear-gradient(
-        rgba(255, 255, 255, 0.93),
-        rgba(255, 255, 255, 0.93)
-      ),
-      url("/banner-home-apoio.png") !important;
-
-    background-position: center center !important;
-  }
-
-  .hero h1 {
-    color: #102b21 !important;
-  }
-
-  .hero p,
-  .hero .lead {
-    color: #344f42 !important;
   }
 }
