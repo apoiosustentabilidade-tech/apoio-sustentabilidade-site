@@ -213,7 +213,7 @@ textarea {
       rgba(4, 35, 24, 0.05) 70%,
       rgba(4, 35, 24, 0.00) 100%
     ),
-    url("banner-apoio-sustentabilidade.png") 58% center / cover no-repeat;
+    url("banner-home-apoio.png") 58% center / cover no-repeat;
 
   color: var(--white);
 }
