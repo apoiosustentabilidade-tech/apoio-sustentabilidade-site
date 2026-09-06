@@ -2228,3 +2228,20 @@ color: #ffffff;
     bottom: 18px !important;
   }
 }
+
+/* =========================================================
+   AJUSTE FINAL - WHATSAPP FLUTUANTE
+   ========================================================= */
+
+.whatsapp-float {
+  right: 22px !important;
+  bottom: 95px !important;
+}
+
+/* Celular */
+@media (max-width: 720px) {
+  .whatsapp-float {
+    right: 14px !important;
+    bottom: 85px !important;
+  }
+}
