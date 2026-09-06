@@ -1351,3 +1351,119 @@ textarea {
     bottom: 14px;
   }
 }
+/* AJUSTE FINO - HOME */
+
+/* Fotos dos serviços mais compactas */
+.service-photo {
+  aspect-ratio: 16 / 7;
+  max-height: 190px;
+}
+
+.service-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-photo-content {
+  padding: 18px 20px 20px;
+}
+
+.service-photo-content h3 {
+  font-size: 20px;
+}
+
+.service-photo-content p {
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.service-photo-grid {
+  gap: 18px;
+}
+
+/* Equipamentos - ícones mais claros e limpos */
+.operation-card {
+  min-height: 225px;
+  padding: 22px;
+}
+
+.operation-visual {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  background: rgba(140, 235, 181, 0.12);
+  border: 1px solid rgba(140, 235, 181, 0.24);
+}
+
+.operation-visual svg {
+  width: 40px;
+  height: 40px;
+  fill: none !important;
+  stroke: #a3f3c4 !important;
+  stroke-width: 2.2;
+  opacity: 0.95;
+}
+
+.operation-visual svg path,
+.operation-visual svg circle,
+.operation-visual svg rect,
+.operation-visual svg line,
+.operation-visual svg polyline,
+.operation-visual svg polygon {
+  fill: none !important;
+  stroke: #a3f3c4 !important;
+}
+
+.operation-card strong {
+  font-size: 17px;
+}
+
+.operation-card small {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.operation-link {
+  font-size: 12px;
+  color: #9ef0bf;
+}
+
+/* deixa a seção operacional visualmente menos pesada */
+.operational-section {
+  padding-top: 66px;
+  padding-bottom: 66px;
+}
+
+.operational-section .section-heading {
+  margin-bottom: 28px;
+}
+
+/* tablet */
+@media (max-width: 1080px) {
+  .service-photo {
+    max-height: 180px;
+  }
+}
+
+/* celular */
+@media (max-width: 620px) {
+  .service-photo {
+    aspect-ratio: 16 / 8;
+    max-height: 210px;
+  }
+
+  .operation-card {
+    min-height: 205px;
+  }
+
+  .operation-visual {
+    width: 58px;
+    height: 58px;
+  }
+
+  .operation-visual svg {
+    width: 36px;
+    height: 36px;
+  }
+}
