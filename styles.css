@@ -365,17 +365,20 @@ textarea {
 
   padding: 42px 0 48px;
 
-  background-color: #f2f8f4;
+  background:
+  linear-gradient(
+    90deg,
+    rgba(5, 58, 39, 0.88) 0%,
+    rgba(5, 58, 39, 0.80) 25%,
+    rgba(5, 58, 39, 0.60) 42%,
+    rgba(5, 58, 39, 0.22) 58%,
+    rgba(5, 58, 39, 0.00) 72%
+  ),
+  url("/banner-home-apoio.png") center center / cover no-repeat;
 
-  background-image:
-    url("/banner-home-apoio.png");
+color: #ffffff;
 
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  color: var(--text);
-}
+  }
 
 
 /* camada clara SOMENTE no lado do texto */
