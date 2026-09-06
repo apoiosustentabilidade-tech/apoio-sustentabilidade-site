@@ -1842,3 +1842,76 @@ color: #ffffff;
     color: #173126 !important;
   }
 }
+
+/* =========================================================
+   NOVO VISUAL - EQUIPAMENTOS E SOLUÇÕES
+   ========================================================= */
+
+#operacao {
+  background: #f3f8f5 !important;
+  color: #12352a !important;
+}
+
+#operacao .section-heading h2 {
+  color: #12352a !important;
+}
+
+#operacao .section-heading p,
+#operacao .lead {
+  color: #53665f !important;
+}
+
+/* Cards */
+#operacao .operation-card {
+  background: #ffffff !important;
+  border: 1px solid #dce9e2 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 24px rgba(15, 66, 47, 0.08) !important;
+  color: #12352a !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
+}
+
+/* Efeito ao passar o mouse */
+#operacao .operation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(15, 66, 47, 0.15) !important;
+  border-color: #8ed8ad !important;
+}
+
+/* Títulos */
+#operacao .operation-card strong {
+  color: #12352a !important;
+  font-weight: 800 !important;
+}
+
+/* Descrições */
+#operacao .operation-card small {
+  color: #53665f !important;
+  line-height: 1.55 !important;
+}
+
+/* Caixa dos ícones */
+#operacao .operation-icon {
+  background: #eaf7ef !important;
+  border: 1px solid #bce6cc !important;
+  color: #169c59 !important;
+}
+
+/* Ícones */
+#operacao .operation-icon svg {
+  stroke: #169c59 !important;
+}
+
+/* Links */
+#operacao .operation-link {
+  color: #078947 !important;
+  font-weight: 800 !important;
+}
+
+/* Melhor espaçamento entre os cards */
+#operacao .operation-grid {
+  gap: 18px !important;
+}
