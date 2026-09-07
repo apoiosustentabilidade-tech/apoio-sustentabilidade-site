@@ -2400,3 +2400,109 @@ color: #ffffff;
     padding: 10px 12px;
   }
 }
+
+/* =====================================================
+   WHATSAPP FLUTUANTE - AJUSTE FINAL
+===================================================== */
+
+.whatsapp-float {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 10px !important;
+  z-index: 9999 !important;
+
+  width: 62px !important;
+  height: 62px !important;
+  min-width: 62px !important;
+  min-height: 62px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  border-radius: 50% !important;
+
+  background: #25D366 !important;
+  border: 3px solid #ffffff !important;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.28),
+    0 0 0 0 rgba(37, 211, 102, 0.55) !important;
+
+  font-size: 0 !important;
+  overflow: visible !important;
+
+  animation: whatsapp-chamar 2.2s infinite !important;
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-float img,
+.whatsapp-float svg {
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: contain !important;
+}
+
+/* Movimento para chamar atenção */
+@keyframes whatsapp-chamar {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    box-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.28),
+      0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+
+  5% {
+    transform: translateY(-3px) rotate(-5deg);
+  }
+
+  10% {
+    transform: translateY(-3px) rotate(5deg);
+  }
+
+  15% {
+    transform: translateY(-3px) rotate(-5deg);
+  }
+
+  20% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  40% {
+    box-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.28),
+      0 0 0 12px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+    box-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.28),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float:hover {
+  animation-play-state: paused !important;
+  transform: scale(1.10) !important;
+}
+
+/* Celular */
+@media (max-width: 820px) {
+  .whatsapp-float {
+    right: 12px !important;
+    bottom: 8px !important;
+
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+  }
+
+  .whatsapp-float img,
+  .whatsapp-float svg {
+    width: 31px !important;
+    height: 31px !important;
+  }
+}
