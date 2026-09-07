@@ -2245,3 +2245,31 @@ color: #ffffff;
     bottom: 85px !important;
   }
 }
+
+/* =========================================================
+   ECONOMIA CIRCULAR - DESTAQUE VISUAL
+   ========================================================= */
+
+.circular-section {
+  position: relative;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 55, 39, 0.94) 0%,
+      rgba(5, 55, 39, 0.82) 45%,
+      rgba(5, 55, 39, 0.66) 100%
+    ),
+    url("Economia Circular.png") center center / cover no-repeat;
+  overflow: hidden;
+}
+
+.circular-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.circular-section .value-content,
+.circular-section .value-panel {
+  position: relative;
+  z-index: 2;
+}
