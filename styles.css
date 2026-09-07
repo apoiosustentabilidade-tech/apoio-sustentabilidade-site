@@ -84,7 +84,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 26px;
+  flex-wrap: nowrap;
+  gap: 14px;
 }
 
 .brand {
