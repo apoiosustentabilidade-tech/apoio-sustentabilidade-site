@@ -65,6 +65,22 @@ telefoneInput?.addEventListener('input', (event) => {
   event.target.setCustomValidity('');
 });
 
+const cidadeSelect = document.getElementById('cidade');
+const cidadeOutroInput = document.getElementById('cidadeOutro');
+
+cidadeSelect?.addEventListener('change', () => {
+  const outroSelecionado = cidadeSelect.value === 'Outro município';
+
+  if (outroSelecionado) {
+    cidadeOutroInput.style.display = 'block';
+    cidadeOutroInput.required = true;
+    cidadeOutroInput.focus();
+  } else {
+    cidadeOutroInput.style.display = 'none';
+    cidadeOutroInput.required = false;
+    cidadeOutroInput.value = '';
+  }
+});
 /* =========================
    ENVIO DO FORMULÁRIO
 ========================= */
