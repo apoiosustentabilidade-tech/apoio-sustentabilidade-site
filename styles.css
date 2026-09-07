@@ -2275,3 +2275,20 @@ color: #ffffff;
   position: relative;
   z-index: 2;
 }
+/* ECONOMIA CIRCULAR - PAINEL CLARO */
+
+.circular-section .value-panel {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(6px);
+}
+
+.circular-section .value-panel > strong {
+  color: #064b38;
+}
+
+.circular-section .value-panel li {
+  color: #064b38;
+  border-color: rgba(6, 75, 56, 0.15);
+}
