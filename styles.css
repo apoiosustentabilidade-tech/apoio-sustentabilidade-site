@@ -2255,9 +2255,10 @@ color: #ffffff;
   background:
     linear-gradient(
   90deg,
-  rgba(5, 55, 39, 0.72) 0%,
-  rgba(5, 55, 39, 0.38) 48%,
-  rgba(5, 55, 39, 0.12) 100%
+  rgba(3, 42, 30, 0.55) 0%,
+  rgba(3, 42, 30, 0.18) 42%,
+  rgba(3, 42, 30, 0.03) 70%,
+  rgba(3, 42, 30, 0.00) 100%
 ),
     url("reciclaveis.png") center center / cover no-repeat;
   overflow: hidden;
