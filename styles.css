@@ -2259,7 +2259,7 @@ color: #ffffff;
       rgba(5, 55, 39, 0.82) 45%,
       rgba(5, 55, 39, 0.66) 100%
     ),
-    url("Economia Circular.png") center center / cover no-repeat;
+    url("reciclaveis.png") center center / cover no-repeat;
   overflow: hidden;
 }
 
