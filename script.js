@@ -278,4 +278,10 @@ btnEmail?.addEventListener('click', () => {
     `&body=${encodeURIComponent(corpo)}`;
 
   window.location.href = mailto;
+
+leadForm.reset();
+
+cidadeOutroInput.style.display = 'none';
+cidadeOutroInput.required = false;
+cidadeOutroInput.value = '';
 });
