@@ -194,3 +194,88 @@ const cidade =
     'noopener,noreferrer'
   );
 });
+
+const btnEmail = document.getElementById('btnEmail');
+const leadForm = document.getElementById('leadForm');
+
+btnEmail?.addEventListener('click', () => {
+  if (!leadForm) return;
+
+  if (!leadForm.reportValidity()) {
+    return;
+  }
+
+  const empresa =
+    document.getElementById('empresa')?.value.trim() || '';
+
+  const cnpj =
+    document.getElementById('cnpj')?.value.trim() || '';
+
+  const nome =
+    document.getElementById('nome')?.value.trim() || '';
+
+  const telefone =
+    document.getElementById('telefone')?.value.trim() || '';
+
+  const email =
+    document.getElementById('email')?.value.trim() || '';
+
+  const servico =
+    document.getElementById('servico')?.value || '';
+
+  const cidadeSelecionada =
+    document.getElementById('cidade')?.value.trim() || '';
+
+  const cidadeOutro =
+    document.getElementById('cidadeOutro')?.value.trim() || '';
+
+  const cidade =
+    cidadeSelecionada === 'Outro município'
+      ? cidadeOutro
+      : cidadeSelecionada;
+
+  const demanda =
+    document.getElementById('demanda')?.value.trim() || '';
+
+  const telefoneDigits = telefone.replace(/\D/g, '');
+
+  if (telefoneDigits.length !== 10 && telefoneDigits.length !== 11) {
+    const telefoneInput = document.getElementById('telefone');
+
+    telefoneInput?.setCustomValidity(
+      'Informe um telefone válido com DDD.'
+    );
+
+    telefoneInput?.reportValidity();
+    return;
+  }
+
+  document.getElementById('telefone')?.setCustomValidity('');
+
+  const assunto =
+    'Solicitação de avaliação - Apoio Sustentabilidade';
+
+  const corpo = [
+    'Olá, gostaria de solicitar uma avaliação.',
+    '',
+    `Empresa: ${empresa}`,
+    cnpj ? `CNPJ: ${cnpj}` : '',
+    `Responsável: ${nome}`,
+    `Telefone / WhatsApp: ${telefone}`,
+    email ? `E-mail: ${email}` : '',
+    `Cidade / local: ${cidade}`,
+    `Tipo de resíduo / serviço: ${servico}`,
+    '',
+    'Necessidade / demanda:',
+    demanda
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  const mailto =
+    `mailto:apoiosustentabilidade@gmail.com` +
+    `?subject=${encodeURIComponent(assunto)}` +
+    `&body=${encodeURIComponent(corpo)}`;
+
+  window.location.href = mailto;
+});
