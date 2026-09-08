@@ -106,11 +106,16 @@ document.getElementById('leadForm')?.addEventListener('submit', (event) => {
   const servico =
     document.getElementById('servico')?.value || '';
 
-  const cidade =
-    document.getElementById('cidade')?.value.trim() || '';
+  const cidadeSelecionada =
+  document.getElementById('cidade')?.value.trim() || '';
 
-  const demanda =
-    document.getElementById('demanda')?.value.trim() || '';
+const cidadeOutro =
+  document.getElementById('cidadeOutro')?.value.trim() || '';
+
+const cidade =
+  cidadeSelecionada === 'Outro município'
+    ? cidadeOutro
+    : cidadeSelecionada;
 
 
   /* =========================
