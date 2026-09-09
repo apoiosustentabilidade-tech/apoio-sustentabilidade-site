@@ -203,10 +203,43 @@
                 Cidade / local
               </label>
 
-              <input
-                id="cidade"
-                type="text"
-                placeholder="Ex.: São Paulo - SP"
+              <select id="cidade">
+  <option value="">Selecione o município</option>
+
+  <optgroup label="São Paulo e Grande São Paulo">
+    <option>São Paulo - SP</option>
+    <option>Guarulhos - SP</option>
+    <option>Osasco - SP</option>
+    <option>Carapicuíba - SP</option>
+    <option>Barueri - SP</option>
+    <option>Santo André - SP</option>
+    <option>São Bernardo do Campo - SP</option>
+    <option>São Caetano do Sul - SP</option>
+    <option>Diadema - SP</option>
+    <option>Mauá - SP</option>
+    <option>Poá - SP</option>
+    <option>Arujá - SP</option>
+    <option>Suzano - SP</option>
+    <option>Caieiras - SP</option>
+    <option>Itaquaquecetuba - SP</option>
+    <option>Santa Isabel - SP</option>
+  </optgroup>
+
+  <optgroup label="Jundiaí e Região">
+    <option>Jundiaí - SP</option>
+    <option>Campo Limpo Paulista - SP</option>
+    <option>Várzea Paulista - SP</option>
+  </optgroup>
+
+  <option value="Outro município">Outro município</option>
+</select>
+
+<input
+  id="cidadeOutro"
+  type="text"
+  placeholder="Digite o município e UF"
+  style="display: none; margin-top: 10px;"
+>
               >
             </div>
 
@@ -928,7 +961,7 @@
 </a>
 
 
-<script src="script.js?v=20260906-3"></script>
+<script src="script.js?v=20260909-1"></script>
 
 </body>
 </html>
