@@ -2572,3 +2572,23 @@ color: #ffffff;
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
 }
+
+/* AJUSTE FINO DO TÍTULO DO HERO */
+
+.hero.hero-v2 h1 {
+  font-size: clamp(2rem, 3.25vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 650px;
+}
+
+.hero.hero-v2 .hero-copy-v2 {
+  padding-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .hero.hero-v2 h1 {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+    line-height: 1.08;
+  }
+}
