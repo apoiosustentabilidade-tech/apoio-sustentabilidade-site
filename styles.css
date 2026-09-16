@@ -2592,3 +2592,28 @@ color: #ffffff;
     line-height: 1.08;
   }
 }
+
+/* =========================================
+   EQUIPAMENTOS E SOLUÇÕES - GRADE FINAL
+   ========================================= */
+
+@media (min-width: 1101px) {
+  .equipment-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .equipment-card {
+    min-width: 0;
+  }
+
+  .equipment-card .equipment-content h3 {
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .equipment-card .equipment-content p {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+}
