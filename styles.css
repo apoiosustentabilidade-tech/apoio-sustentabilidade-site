@@ -2617,3 +2617,54 @@ color: #ffffff;
     line-height: 1.45;
   }
 }
+
+/* ==================================================
+   A APOIO - AJUSTE VISUAL HOME
+================================================== */
+
+#apoio {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+#apoio .about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 54px;
+  align-items: center;
+}
+
+#apoio .about-content h2 {
+  font-size: clamp(2.3rem, 3.5vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+  margin: 12px 0 20px;
+  max-width: 650px;
+}
+
+#apoio .about-content p {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 650px;
+}
+
+#apoio .about-points {
+  gap: 14px;
+}
+
+#apoio .about-point {
+  padding: 22px;
+  min-height: 145px;
+}
+
+@media (max-width: 900px) {
+  #apoio .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #apoio .about-content h2 {
+    font-size: 2.3rem;
+    letter-spacing: -0.8px;
+  }
+}
