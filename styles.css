@@ -2597,7 +2597,7 @@ color: #ffffff;
    EQUIPAMENTOS E SOLUÇÕES - GRADE FINAL
    ========================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 1000px) {
   .equipment-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 16px;
