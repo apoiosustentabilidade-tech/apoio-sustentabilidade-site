@@ -2385,10 +2385,13 @@ color: #ffffff;
 
   .nav-dropdown-menu {
     position: static;
+    left: auto;
+right: auto;
     width: 100%;
     max-width: 100%;
 box-sizing: border-box;
 overflow-x: hidden;
+    min-width: 0;
     margin-top: 8px;
     padding: 8px;
     transform: none;
@@ -2407,8 +2410,13 @@ display: none;
   pointer-events: auto;
 }
   .nav-dropdown-menu a {
-    padding: 10px 12px;
-  }
+  padding: 10px 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
 }
 
 /* =====================================================
