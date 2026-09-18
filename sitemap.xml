@@ -69,4 +69,9 @@
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
 </url>
+  <url>
+  <loc>https://www.apoiosustentabilidade.com.br/logistica-reversa-sp.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
 </urlset>
