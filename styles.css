@@ -1562,7 +1562,10 @@ color: #ffffff;
     top: 76px;
     left: 0;
     right: 0;
-
+    width: 100%;
+max-width: 100vw;
+box-sizing: border-box;
+overflow-x: hidden;
     display: none;
 
     flex-direction: column;
