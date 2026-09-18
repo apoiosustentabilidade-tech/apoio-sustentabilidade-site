@@ -5,6 +5,26 @@ toggle?.addEventListener('click', () => {
   nav?.classList.toggle('open');
 });
 
+// Menu Serviços - controle para celular
+const dropdown = document.querySelector('.nav-dropdown');
+const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+
+dropdownToggle?.addEventListener('click', (event) => {
+  if (window.innerWidth <= 900) {
+    event.preventDefault();
+    event.stopPropagation();
+    dropdown?.classList.toggle('open');
+  }
+});
+
+// Ao clicar em qualquer link do menu, fecha o menu mobile
+nav?.querySelectorAll('a:not(.nav-dropdown-toggle)').forEach((link) => {
+  link.addEventListener('click', () => {
+    nav?.classList.remove('open');
+    dropdown?.classList.remove('open');
+  });
+});
+
 const ano = document.getElementById('ano');
 
 if (ano) {
