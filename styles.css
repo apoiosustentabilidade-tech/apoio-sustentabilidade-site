@@ -2689,3 +2689,84 @@ display: none;
     letter-spacing: -0.8px;
   }
 }
+
+/* =====================================================
+   CORRECAO FINAL MENU MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .nav-wrap {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    transform: none;
+    margin: 8px 0 0;
+    padding: 8px;
+    overflow: hidden;
+
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
