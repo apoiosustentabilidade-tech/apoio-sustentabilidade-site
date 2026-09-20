@@ -3009,3 +3009,33 @@ display: none;
     text-align: center;
   }
 }
+
+/* =========================================================
+   HOME - RITMO VISUAL E ESPAÇAMENTOS
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+  .section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .section-soft {
+    position: relative;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section-heading p {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .regions-premium {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+}
