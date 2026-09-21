@@ -3219,3 +3219,42 @@ display: none;
     object-fit: contain;
     margin: 0 auto;
 }
+
+/* =====================================================
+   AJUSTE GLOBAL DO HERO - TODAS AS PÁGINAS
+   Reduz altura e espaços excessivos
+===================================================== */
+
+.hero {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.hero-grid {
+  min-height: auto !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  align-items: center !important;
+}
+
+.hero-copy {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-form,
+.quote-card,
+.hero-card {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Celular */
+@media (max-width: 720px) {
+  .hero-grid {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+}
