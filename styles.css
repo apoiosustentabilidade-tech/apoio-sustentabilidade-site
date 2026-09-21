@@ -2039,16 +2039,21 @@ overflow-x: hidden;
 /* IMAGEM */
 
 .equipment-image {
-  height: 170px;
-  overflow: hidden;
-  background: #f3f8f5;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
 }
 
 .equipment-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
   object-position: center;
+  margin: 0 auto;
   transition: transform 0.35s ease;
 }
 
@@ -2167,8 +2172,9 @@ overflow-x: hidden;
   }
 
   .equipment-image {
-    height: 190px;
-  }
+  height: auto;
+  min-height: 0;
+}
 
   .equipment-cta {
     grid-template-columns: 1fr;
