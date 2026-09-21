@@ -3200,3 +3200,9 @@ display: none;
   width: 100%;
   height: auto;
 }
+
+/* Reduz o espaço da seção de caçamba Classe II */
+.section-cacamba-compacta {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
