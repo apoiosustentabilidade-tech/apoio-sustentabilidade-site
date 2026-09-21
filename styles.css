@@ -3185,24 +3185,31 @@ display: none;
   }
 }
 
-/* Ajuste da seção de caçambas nas páginas de resíduos */
+/* =====================================================
+   PADRONIZAÇÃO GERAL DAS IMAGENS DAS PÁGINAS DE SERVIÇOS
+   Mantém proporção original e centraliza os equipamentos
+   ===================================================== */
+
 .two-col {
-  align-items: center;
+    align-items: center;
 }
 
 .two-col .equipment-image {
-  margin-top: 0;
-  margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 0;
 }
 
 .two-col .equipment-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Reduz o espaço da seção de caçamba Classe II */
-.section-cacamba-compacta {
-  padding-top: 28px;
-  padding-bottom: 28px;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    margin: 0 auto;
 }
