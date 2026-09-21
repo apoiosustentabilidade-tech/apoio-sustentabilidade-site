@@ -3184,3 +3184,19 @@ display: none;
     min-height: 0;
   }
 }
+
+/* Ajuste da seção de caçambas nas páginas de resíduos */
+.two-col {
+  align-items: center;
+}
+
+.two-col .equipment-image {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.two-col .equipment-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
