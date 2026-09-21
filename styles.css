@@ -477,7 +477,7 @@ color: #ffffff;
 }
 
 .quote-card-v2 {
-  padding: 26px;
+  padding: 18px 22px;
 }
 
 .quote-card .eyebrow {
@@ -495,7 +495,7 @@ color: #ffffff;
 }
 
 .quote-intro {
-  margin: 9px 0 20px;
+  margin: 7px 0 12px;
 
   color: var(--muted);
   font-size: 14px;
@@ -503,14 +503,14 @@ color: #ffffff;
 
 .quote-card form {
   display: grid;
-  gap: 13px;
+ gap: 8px;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  gap: 11px;
+  gap: 8px;
 }
 
 .form-field {
@@ -568,12 +568,12 @@ color: #ffffff;
 }
 
 .form-field textarea {
-  min-height: 96px;
+  min-height: 72px;
   resize: vertical;
 }
 
 .send-choice {
-  padding: 12px 14px;
+  padding: 8px 12px;
 
   border: 1px solid var(--line);
   border-radius: 12px;
