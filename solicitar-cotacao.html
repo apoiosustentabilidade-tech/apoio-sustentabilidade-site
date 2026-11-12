@@ -180,6 +180,84 @@
     </div>
   </main>
 
-  <script src="script.js?v=20260909-1"></script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("quoteForm");
+  const btnEmail = document.getElementById("btnEmail");
+  const cidade = document.getElementById("cidade");
+  const cidadeOutro = document.getElementById("cidadeOutro");
+
+  if (!form) return;
+
+  cidade.addEventListener("change", function () {
+    const outro = cidade.value === "Outro município";
+    cidadeOutro.style.display = outro ? "block" : "none";
+    cidadeOutro.required = outro;
+    if (!outro) cidadeOutro.value = "";
+  });
+
+  function prepararMensagem() {
+    if (!form.reportValidity()) return null;
+
+    const valor = id => document.getElementById(id).value.trim();
+    const telefone = valor("telefone");
+    const digitos = telefone.replace(/\D/g, "");
+
+    if (digitos.length !== 10 && digitos.length !== 11) {
+      const campo = document.getElementById("telefone");
+      campo.setCustomValidity("Informe um telefone válido com DDD.");
+      campo.reportValidity();
+      return null;
+    }
+
+    document.getElementById("telefone").setCustomValidity("");
+
+    const local = cidade.value === "Outro município"
+      ? cidadeOutro.value.trim()
+      : cidade.value;
+
+    return [
+      "Olá! Gostaria de solicitar uma cotação à Apoio Sustentabilidade.",
+      "",
+      "Empresa: " + valor("empresa"),
+      "Responsável: " + valor("nome"),
+      "Telefone / WhatsApp: " + telefone,
+      valor("cnpj") ? "CNPJ: " + valor("cnpj") : "",
+      valor("email") ? "E-mail: " + valor("email") : "",
+      "Cidade / local: " + local,
+      "Serviço: " + valor("servico"),
+      "Necessidade: " + valor("necessidade")
+    ].filter(Boolean).join("\n");
+  }
+
+  document.getElementById("telefone").addEventListener("input", function () {
+    this.setCustomValidity("");
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const mensagem = prepararMensagem();
+    if (!mensagem) return;
+
+    window.open(
+      "https://wa.me/5511994576047?text=" + encodeURIComponent(mensagem),
+      "_blank",
+      "noopener,noreferrer"
+    );
+  });
+
+  btnEmail.addEventListener("click", function () {
+    const mensagem = prepararMensagem();
+    if (!mensagem) return;
+
+    window.location.href =
+      "mailto:apoiosustentabilidade@gmail.com" +
+      "?subject=" + encodeURIComponent("Solicitação de cotação - Apoio Sustentabilidade") +
+      "&body=" + encodeURIComponent(mensagem);
+  });
+});
+</script>
+
 </body>
 </html>
