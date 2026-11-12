@@ -1997,19 +1997,244 @@ e condições definidas para o atendimento.
 </footer>
 
 
-<!-- ======================================================
-     WHATSAPP FLUTUANTE
-     ====================================================== -->
+<!-- CHAT APOIO SUSTENTABILIDADE -->
+<style>
+  #apoio-chat-button {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9998;
+    width: 64px;
+    height: 64px;
+    border: 0;
+    border-radius: 50%;
+    background: #087c42;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #0003;
+  }
 
-<a
-  href="https://wa.me/5511994576047"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="whatsapp-float"
-  aria-label="Falar com a Apoio Sustentabilidade pelo WhatsApp"
->
-  <img src="whatsapp-icon.png" alt="WhatsApp">
-</a>
+  #apoio-chat-panel {
+    position: fixed;
+    right: 22px;
+    bottom: 98px;
+    z-index: 9999;
+    width: min(360px, calc(100vw - 32px));
+    height: min(490px, calc(100dvh - 120px));
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 8px 35px #0004;
+    font-family: Arial, sans-serif;
+  }
+
+  #apoio-chat-panel.open { display: flex; }
+
+  .apoio-chat-header {
+    background: #07552b;
+    color: white;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .apoio-chat-header button {
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .apoio-chat-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    background: #f3f8f5;
+  }
+
+  .apoio-chat-message {
+    padding: 12px;
+    border-radius: 12px;
+    background: white;
+    color: #183c2a;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .apoio-chat-content label {
+    display: block;
+    margin: 12px 0 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #183c2a;
+  }
+
+  .apoio-chat-content input,
+  .apoio-chat-content select,
+  .apoio-chat-content textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #cbd9d0;
+    border-radius: 8px;
+    background: white;
+    color: #183c2a;
+    font: inherit;
+    font-size: 14px;
+  }
+
+  .apoio-chat-content textarea {
+    min-height: 75px;
+    resize: vertical;
+  }
+
+  .apoio-chat-submit {
+    width: 100%;
+    margin-top: 15px;
+    padding: 13px;
+    background: #087c42;
+    color: white;
+    border: 0;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    #apoio-chat-panel {
+      right: 16px;
+      bottom: 90px;
+    }
+    #apoio-chat-button {
+      right: 16px;
+      bottom: 16px;
+    }
+  }
+</style>
+
+<button id="apoio-chat-button"
+        type="button"
+        aria-label="Abrir atendimento"
+        aria-expanded="false"
+        aria-controls="apoio-chat-panel">💬</button>
+
+<section id="apoio-chat-panel"
+         role="dialog"
+         aria-label="Atendimento Apoio Sustentabilidade">
+  <div class="apoio-chat-header">
+    <div>
+      <strong>Apoio Sustentabilidade</strong>
+      <div style="font-size:12px;margin-top:4px">
+        Atendimento comercial
+      </div>
+    </div>
+    <button type="button" id="apoio-chat-close"
+            aria-label="Fechar atendimento">×</button>
+  </div>
+
+  <div class="apoio-chat-content">
+    <div class="apoio-chat-message">
+      Olá! Bem-vindo à Apoio Sustentabilidade.
+      Como podemos ajudar sua empresa?
+    </div>
+
+    <form id="apoio-chat-form">
+      <label for="apoio-chat-nome">Seu nome *</label>
+      <input id="apoio-chat-nome" required>
+
+      <label for="apoio-chat-empresa">Empresa *</label>
+      <input id="apoio-chat-empresa" required>
+
+      <label for="apoio-chat-servico">Serviço desejado *</label>
+      <select id="apoio-chat-servico" required>
+        <option value="">Selecione um serviço</option>
+        <option>Coleta e transporte de resíduos</option>
+        <option>Resíduos Classe I</option>
+        <option>Resíduos Classe II</option>
+        <option>Caminhão Auto Vácuo</option>
+        <option>Hidrojateamento</option>
+        <option>Caçambas e containers</option>
+        <option>Limpeza de caixas separadoras</option>
+        <option>Resíduos eletrônicos</option>
+        <option>MTR, CADRI e documentação</option>
+        <option>Outros serviços</option>
+      </select>
+
+      <label for="apoio-chat-mensagem">Sua necessidade *</label>
+      <textarea id="apoio-chat-mensagem"
+                required
+                placeholder="Descreva o serviço e o município"></textarea>
+
+      <button class="apoio-chat-submit" type="submit">
+        Enviar pelo WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+(function () {
+  const button = document.getElementById("apoio-chat-button");
+  const panel = document.getElementById("apoio-chat-panel");
+  const close = document.getElementById("apoio-chat-close");
+  const form = document.getElementById("apoio-chat-form");
+
+  function toggleChat(open) {
+    panel.classList.toggle("open", open);
+    button.setAttribute("aria-expanded", String(open));
+    if (open) {
+      document.getElementById("apoio-chat-nome").focus();
+    } else {
+      button.focus();
+    }
+  }
+
+  button.addEventListener("click", function () {
+    toggleChat(!panel.classList.contains("open"));
+  });
+
+  close.addEventListener("click", function () {
+    toggleChat(false);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && panel.classList.contains("open")) {
+      toggleChat(false);
+    }
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const nome = document.getElementById("apoio-chat-nome").value.trim();
+    const empresa = document.getElementById("apoio-chat-empresa").value.trim();
+    const servico = document.getElementById("apoio-chat-servico").value;
+    const mensagem = document.getElementById("apoio-chat-mensagem").value.trim();
+
+    const texto =
+      "Olá, Apoio Sustentabilidade! Solicito atendimento.\n\n" +
+      "Nome: " + nome + "\n" +
+      "Empresa: " + empresa + "\n" +
+      "Serviço: " + servico + "\n" +
+      "Necessidade: " + mensagem;
+
+    window.open(
+      "https://wa.me/5511994576047?text=" + encodeURIComponent(texto),
+      "_blank",
+      "noopener,noreferrer"
+    );
+  });
+})();
+</script>
+<!-- FIM DO CHAT APOIO SUSTENTABILIDADE -->
 
 
 <script src="script.js?v=20260909-1"></script>
