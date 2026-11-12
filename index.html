@@ -1999,21 +1999,26 @@ e condições definidas para o atendimento.
 
 <!-- CHAT APOIO SUSTENTABILIDADE -->
 <style>
-  #apoio-chat-button {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 9998;
-    width: 64px;
-    height: 64px;
-    border: 0;
-    border-radius: 50%;
-    background: #087c42;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 5px 20px #0003;
-  }
+ #apoio-chat-button {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9998;
+  width: auto;
+  max-width: calc(100vw - 44px);
+  height: 56px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 30px;
+  background: #087c42;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #0003;
+}
 
   #apoio-chat-panel {
     position: fixed;
@@ -2122,7 +2127,7 @@ e condições definidas para o atendimento.
         type="button"
         aria-label="Abrir atendimento"
         aria-expanded="false"
-        aria-controls="apoio-chat-panel">💬</button>
+        aria-controls="apoio-chat-panel">💬 Vamos conversar por chat</button>
 
 <section id="apoio-chat-panel"
          role="dialog"
