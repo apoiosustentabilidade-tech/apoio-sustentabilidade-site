@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,68 +6,43 @@
   <title>Solicitar Cotação | Apoio Sustentabilidade</title>
   <meta name="description" content="Solicite uma cotação para coleta, transporte, destinação de resíduos e serviços ambientais com a Apoio Sustentabilidade.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20261112-1">
   <style>
-    .cotacao-page {
-      min-height: 100vh;
-      background: #f1f7f3;
-      padding: 48px 18px 72px;
-      font-family: Arial, sans-serif;
-    }
-    .cotacao-container {
-      max-width: 880px;
-      margin: auto;
-    }
-    .cotacao-topo {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .cotacao-topo h1 {
-      color: #103e2b;
-      font-size: clamp(28px, 4vw, 40px);
-      margin: 12px 0;
-    }
-    .cotacao-topo p {
-      color: #52675a;
-      line-height: 1.6;
-    }
-    .cotacao-voltar {
-      display: inline-block;
-      color: #087c42;
-      text-decoration: none;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
-    .cotacao-page .quote-card {
-      padding: 30px;
-      border-radius: 20px;
-      background: white;
-      box-shadow: 0 12px 35px #102e2018;
-    }
-    .cotacao-page .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .cotacao-page .form-field {
-      min-width: 0;
-    }
-    .cotacao-page .form-actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .cotacao-page .form-actions button {
-      width: 100%;
-      min-height: 48px;
-      cursor: pointer;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #173126; background: #f1f7f3; line-height: 1.5; }
+    .cotacao-page { min-height: 100vh; padding: 28px 18px 72px; }
+    .cotacao-container { width: 100%; max-width: 920px; margin: 0 auto; }
+    .cotacao-voltar { display: inline-flex; align-items: center; gap: 8px; color: #087c42; font-size: 14px; font-weight: 700; text-decoration: none; margin-bottom: 22px; }
+    .cotacao-voltar:hover { text-decoration: underline; }
+    .cotacao-topo { text-align: center; margin-bottom: 30px; }
+    .cotacao-logo { display: block; width: min(245px, 80%); height: auto; margin: 0 auto 16px; }
+    .cotacao-topo h1 { margin: 0 0 12px; color: #103e2b; font-size: clamp(30px, 4vw, 42px); line-height: 1.15; }
+    .cotacao-topo p { max-width: 710px; margin: 0 auto; color: #52675a; font-size: 16px; line-height: 1.6; }
+    .cotacao-page .quote-card { padding: 34px 38px 38px; border: 1px solid #dfece4; border-radius: 22px; background: #fff; box-shadow: 0 14px 45px rgba(16,46,32,.09); }
+    .cotacao-page .quote-card h2 { margin: 0 0 6px; color: #123e2b; font-size: 25px; line-height: 1.25; }
+    .cotacao-page .quote-intro { margin: 0 0 26px; color: #64766b; font-size: 14px; }
+    .cotacao-page form { display: grid; gap: 20px; }
+    .cotacao-page .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
+    .cotacao-page .form-field { display: flex; flex-direction: column; min-width: 0; gap: 7px; }
+    .cotacao-page .form-field label { display: block; color: #173126; font-size: 14px; font-weight: 700; }
+    .cotacao-page .form-field input, .cotacao-page .form-field select, .cotacao-page .form-field textarea { display: block; width: 100%; min-width: 0; min-height: 48px; padding: 11px 13px; border: 1px solid #cbdcd1; border-radius: 10px; background: #fbfdfb; color: #173126; font: inherit; font-size: 15px; line-height: 1.4; outline: none; transition: border-color .2s, box-shadow .2s; }
+    .cotacao-page .form-field input:focus, .cotacao-page .form-field select:focus, .cotacao-page .form-field textarea:focus { border-color: #16854f; box-shadow: 0 0 0 3px rgba(22,133,79,.13); }
+    .cotacao-page .form-field textarea { min-height: 130px; resize: vertical; }
+    .cotacao-page .form-field input::placeholder, .cotacao-page .form-field textarea::placeholder { color: #819187; }
+    .cotacao-page #cidadeOutro { margin-top: 4px; }
+    .cotacao-page .form-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 4px; }
+    .cotacao-page .form-actions .btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 52px; padding: 13px 16px; border: 0; border-radius: 11px; color: #fff; font: inherit; font-size: 15px; font-weight: 700; line-height: 1.3; text-align: center; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+    .cotacao-page .form-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(16,46,32,.15); }
+    .cotacao-page .btn-whatsapp { background: linear-gradient(135deg, #25b85b, #138443); }
+    .cotacao-page .btn-email { background: linear-gradient(135deg, #2679b8, #155b91); }
+    .cotacao-note { margin: 18px 0 0; color: #718278; font-size: 12px; text-align: center; }
     @media (max-width: 650px) {
-      .cotacao-page .quote-card { padding: 20px; }
-      .cotacao-page .form-grid,
-      .cotacao-page .form-actions {
-        grid-template-columns: 1fr;
-      }
+      .cotacao-page { padding: 18px 14px 44px; }
+      .cotacao-page .quote-card { padding: 23px 18px 26px; border-radius: 17px; }
+      .cotacao-page .form-grid, .cotacao-page .form-actions { grid-template-columns: 1fr; }
+      .cotacao-page form { gap: 17px; }
+      .cotacao-topo { margin-bottom: 24px; }
+      .cotacao-topo p { font-size: 14px; }
     }
   </style>
 </head>
@@ -76,188 +50,102 @@
   <main class="cotacao-page">
     <div class="cotacao-container">
       <a class="cotacao-voltar" href="index.html">← Voltar ao site</a>
-
       <div class="cotacao-topo">
-        <img src="logo-apoio.png" alt="Apoio Sustentabilidade" style="max-width:260px;width:100%;height:auto">
+        <img class="cotacao-logo" src="logo-apoio.png" alt="Apoio Sustentabilidade">
         <h1>Solicite sua cotação</h1>
-        <p>Conte sobre sua necessidade. Avaliaremos a solução ambiental adequada para sua empresa, por meio de nossa rede de parceiros especializados.</p>
+        <p>Informe sua necessidade de coleta, transporte ou destinação de resíduos. Nossa equipe avaliará as opções de atendimento com parceiros especializados.</p>
       </div>
-
       <div class="quote-card quote-card-v2" id="cotacao">
         <h2>Dados para atendimento</h2>
-        <p class="quote-intro">Preencha os campos abaixo para solicitar uma avaliação comercial.</p>
-
+        <p class="quote-intro">Preencha as informações para solicitar uma avaliação comercial. Os campos com * são obrigatórios.</p>
         <form id="quoteForm">
           <div class="form-grid">
-            <div class="form-field">
-              <label for="empresa">Empresa *</label>
-              <input id="empresa" name="empresa" required placeholder="Nome da empresa">
-            </div>
-            <div class="form-field">
-              <label for="nome">Responsável *</label>
-              <input id="nome" name="nome" required placeholder="Seu nome">
-            </div>
-            <div class="form-field">
-              <label for="telefone">Telefone / WhatsApp *</label>
-              <input id="telefone" name="telefone" type="tel" required placeholder="(11) 99999-9999">
-            </div>
-            <div class="form-field">
-              <label for="cnpj">CNPJ (opcional)</label>
-              <input id="cnpj" name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00">
-            </div>
-            <div class="form-field">
-              <label for="email">E-mail (opcional)</label>
-              <input id="email" name="email" type="email" placeholder="empresa@email.com.br">
-            </div>
+            <div class="form-field"><label for="empresa">Empresa *</label><input id="empresa" name="empresa" required placeholder="Nome da empresa" autocomplete="organization"></div>
+            <div class="form-field"><label for="nome">Responsável *</label><input id="nome" name="nome" required placeholder="Seu nome" autocomplete="name"></div>
+            <div class="form-field"><label for="telefone">Telefone / WhatsApp *</label><input id="telefone" name="telefone" type="tel" required placeholder="(11) 99999-9999" autocomplete="tel"></div>
+            <div class="form-field"><label for="cnpj">CNPJ (opcional)</label><input id="cnpj" name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00"></div>
+            <div class="form-field"><label for="email">E-mail (opcional)</label><input id="email" name="email" type="email" placeholder="empresa@email.com.br" autocomplete="email"></div>
             <div class="form-field">
               <label for="cidade">Cidade / local *</label>
               <select id="cidade" name="cidade" required>
                 <option value="">Selecione o município</option>
-                <option>São Paulo - SP</option>
-                <option>Guarulhos - SP</option>
-                <option>Osasco - SP</option>
-                <option>Carapicuíba - SP</option>
-                <option>Barueri - SP</option>
-                <option>Cotia - SP</option>
-                <option>Embu das Artes - SP</option>
-                <option>Santo André - SP</option>
-                <option>São Bernardo do Campo - SP</option>
-                <option>São Caetano do Sul - SP</option>
-                <option>Diadema - SP</option>
-                <option>Mauá - SP</option>
-                <option>Jundiaí - SP</option>
-                <option>Campo Limpo Paulista - SP</option>
-                <option>Várzea Paulista - SP</option>
-                <option>Jarinu - SP</option>
-                <option>Itupeva - SP</option>
-                <option>Campinas - SP</option>
-                <option value="Outro município">Outro município</option>
+                <option>São Paulo - SP</option><option>Guarulhos - SP</option><option>Osasco - SP</option><option>Carapicuíba - SP</option><option>Barueri - SP</option><option>Cotia - SP</option><option>Embu das Artes - SP</option><option>Santo André - SP</option><option>São Bernardo do Campo - SP</option><option>São Caetano do Sul - SP</option><option>Diadema - SP</option><option>Mauá - SP</option><option>Jundiaí - SP</option><option>Campo Limpo Paulista - SP</option><option>Várzea Paulista - SP</option><option>Jarinu - SP</option><option>Itupeva - SP</option><option>Campinas - SP</option><option value="Outro município">Outro município</option>
               </select>
-              <input id="cidadeOutro" name="cidadeOutro"
-                     placeholder="Digite o município e UF"
-                     style="display:none;margin-top:10px">
+              <input id="cidadeOutro" name="cidadeOutro" placeholder="Digite o município e UF" style="display:none">
             </div>
           </div>
-
-          <div class="form-field">
-            <label for="servico">Tipo de resíduo / serviço *</label>
+          <div class="form-field"><label for="servico">Tipo de resíduo / serviço *</label>
             <select id="servico" name="servico" required>
               <option value="">Selecione uma opção</option>
-              <option>Coleta e transporte de resíduos</option>
-              <option>Resíduos Classe I</option>
-              <option>Resíduos Classe II</option>
-              <option>Resíduos industriais</option>
-              <option>Resíduos líquidos</option>
-              <option>Resíduos eletrônicos</option>
-              <option>Lixo comum empresarial</option>
-              <option>Caminhão Auto Vácuo</option>
-              <option>Hidrojateamento industrial</option>
-              <option>Limpeza de caixa separadora água e óleo</option>
-              <option>Limpeza de caixa de gordura / fossa</option>
-              <option>Locação de caçambas</option>
-              <option>Logística reversa</option>
-              <option>MTR, CADRI e documentação ambiental</option>
-              <option>Outros serviços</option>
+              <option>Coleta e transporte de resíduos</option><option>Resíduos Classe I</option><option>Resíduos Classe II</option><option>Resíduos industriais</option><option>Resíduos líquidos</option><option>Resíduos eletrônicos</option><option>Lixo comum empresarial</option><option>Caminhão Auto Vácuo</option><option>Hidrojateamento industrial</option><option>Limpeza de caixa separadora água e óleo</option><option>Limpeza de caixa de gordura / fossa</option><option>Locação de caçambas</option><option>Logística reversa</option><option>MTR, CADRI e documentação ambiental</option><option>Outros serviços</option>
             </select>
           </div>
-
-          <div class="form-field">
-            <label for="necessidade">Descreva sua necessidade *</label>
-            <textarea id="necessidade" name="necessidade"
-                      required placeholder="Informe o tipo de resíduo, volume aproximado, frequência e local da operação."></textarea>
-          </div>
-
+          <div class="form-field"><label for="necessidade">Descreva sua necessidade *</label><textarea id="necessidade" name="necessidade" required placeholder="Informe o tipo de resíduo, volume aproximado, frequência e local da operação."></textarea></div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-whatsapp">
-              Enviar pelo WhatsApp
-            </button>
-            <button type="button" id="btnEmail" class="btn btn-email">
-              Enviar por e-mail
-            </button>
+            <button type="submit" class="btn btn-whatsapp">Enviar pelo WhatsApp</button>
+            <button type="button" id="btnEmail" class="btn btn-email">Enviar por e-mail</button>
           </div>
         </form>
+        <p class="cotacao-note">Ao clicar em uma opção, a mensagem será preparada no WhatsApp ou no seu aplicativo de e-mail.</p>
       </div>
     </div>
   </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("quoteForm");
+      const btnEmail = document.getElementById("btnEmail");
+      const cidade = document.getElementById("cidade");
+      const cidadeOutro = document.getElementById("cidadeOutro");
+      const campoTelefone = document.getElementById("telefone");
+      if (!form) return;
 
-  
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("quoteForm");
-  const btnEmail = document.getElementById("btnEmail");
-  const cidade = document.getElementById("cidade");
-  const cidadeOutro = document.getElementById("cidadeOutro");
+      cidade.addEventListener("change", function () {
+        const outro = cidade.value === "Outro município";
+        cidadeOutro.style.display = outro ? "block" : "none";
+        cidadeOutro.required = outro;
+        if (!outro) cidadeOutro.value = "";
+      });
+      campoTelefone.addEventListener("input", function () { this.setCustomValidity(""); });
 
-  if (!form) return;
+      function prepararMensagem() {
+        if (!form.reportValidity()) return null;
+        const valor = id => document.getElementById(id).value.trim();
+        const telefone = valor("telefone");
+        const digitos = telefone.replace(/\D/g, "");
+        if (digitos.length !== 10 && digitos.length !== 11) {
+          campoTelefone.setCustomValidity("Informe um telefone válido com DDD.");
+          campoTelefone.reportValidity();
+          return null;
+        }
+        campoTelefone.setCustomValidity("");
+        const local = cidade.value === "Outro município" ? cidadeOutro.value.trim() : cidade.value;
+        return [
+          "Olá! Gostaria de solicitar uma cotação à Apoio Sustentabilidade.", "",
+          "Empresa: " + valor("empresa"),
+          "Responsável: " + valor("nome"),
+          "Telefone / WhatsApp: " + telefone,
+          valor("cnpj") ? "CNPJ: " + valor("cnpj") : "",
+          valor("email") ? "E-mail: " + valor("email") : "",
+          "Cidade / local: " + local,
+          "Serviço: " + valor("servico"),
+          "Necessidade: " + valor("necessidade")
+        ].filter(Boolean).join("\n");
+      }
 
-  cidade.addEventListener("change", function () {
-    const outro = cidade.value === "Outro município";
-    cidadeOutro.style.display = outro ? "block" : "none";
-    cidadeOutro.required = outro;
-    if (!outro) cidadeOutro.value = "";
-  });
-
-  function prepararMensagem() {
-    if (!form.reportValidity()) return null;
-
-    const valor = id => document.getElementById(id).value.trim();
-    const telefone = valor("telefone");
-    const digitos = telefone.replace(/\D/g, "");
-
-    if (digitos.length !== 10 && digitos.length !== 11) {
-      const campo = document.getElementById("telefone");
-      campo.setCustomValidity("Informe um telefone válido com DDD.");
-      campo.reportValidity();
-      return null;
-    }
-
-    document.getElementById("telefone").setCustomValidity("");
-
-    const local = cidade.value === "Outro município"
-      ? cidadeOutro.value.trim()
-      : cidade.value;
-
-    return [
-      "Olá! Gostaria de solicitar uma cotação à Apoio Sustentabilidade.",
-      "",
-      "Empresa: " + valor("empresa"),
-      "Responsável: " + valor("nome"),
-      "Telefone / WhatsApp: " + telefone,
-      valor("cnpj") ? "CNPJ: " + valor("cnpj") : "",
-      valor("email") ? "E-mail: " + valor("email") : "",
-      "Cidade / local: " + local,
-      "Serviço: " + valor("servico"),
-      "Necessidade: " + valor("necessidade")
-    ].filter(Boolean).join("\n");
-  }
-
-  document.getElementById("telefone").addEventListener("input", function () {
-    this.setCustomValidity("");
-  });
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const mensagem = prepararMensagem();
-    if (!mensagem) return;
-
-    window.open(
-      "https://wa.me/5511994576047?text=" + encodeURIComponent(mensagem),
-      "_blank",
-      "noopener,noreferrer"
-    );
-  });
-
-  btnEmail.addEventListener("click", function () {
-    const mensagem = prepararMensagem();
-    if (!mensagem) return;
-
-    window.location.href =
-      "mailto:apoiosustentabilidade@gmail.com" +
-      "?subject=" + encodeURIComponent("Solicitação de cotação - Apoio Sustentabilidade") +
-      "&body=" + encodeURIComponent(mensagem);
-  });
-});
-</script>
-
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const mensagem = prepararMensagem();
+        if (!mensagem) return;
+        window.open("https://wa.me/5511994576047?text=" + encodeURIComponent(mensagem), "_blank", "noopener,noreferrer");
+      });
+      btnEmail.addEventListener("click", function () {
+        const mensagem = prepararMensagem();
+        if (!mensagem) return;
+        window.location.href = "mailto:apoiosustentabilidade@gmail.com" +
+          "?subject=" + encodeURIComponent("Solicitação de cotação - Apoio Sustentabilidade") +
+          "&body=" + encodeURIComponent(mensagem);
+      });
+    });
+  </script>
 </body>
 </html>
