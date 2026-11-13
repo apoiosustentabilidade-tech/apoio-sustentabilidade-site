@@ -3366,3 +3366,83 @@ display: none;
     padding: 12px 0 !important;
   }
 }
+
+/* =========================================================
+   CORREÇÃO ISOLADA DA HOME - 13/11/2026
+   Mantém intactos os heros das páginas internas.
+   ========================================================= */
+body#top .hero.hero-v2 {
+  min-height: 550px !important;
+  height: auto !important;
+  padding: 56px 0 62px !important;
+  background:
+    linear-gradient(90deg, rgba(4,48,32,.92) 0%, rgba(4,48,32,.80) 34%, rgba(4,48,32,.34) 66%, rgba(4,48,32,.04) 100%),
+    url('/banner-home-apoio.png') center center / cover no-repeat !important;
+  color: #fff !important;
+}
+body#top .hero.hero-v2::before { display: none !important; }
+body#top .hero.hero-v2 .hero-grid-full {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) !important;
+  width: min(1180px, calc(100% - 40px)) !important;
+  max-width: 1180px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin-inline: auto !important;
+  gap: 0 !important;
+  align-items: center !important;
+}
+body#top .hero.hero-v2 .hero-grid-full .hero-copy {
+  width: min(100%, 720px) !important;
+  max-width: 720px !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  text-align: left !important;
+}
+body#top .hero.hero-v2 .hero-eyebrow { color: #a6f2c6 !important; }
+body#top .hero.hero-v2 h1 {
+  max-width: 720px !important;
+  margin: 0 0 20px !important;
+  color: #fff !important;
+  font-size: clamp(36px, 4vw, 55px) !important;
+  line-height: 1.1 !important;
+}
+body#top .hero.hero-v2 h1 strong { color: #72e5a3 !important; }
+body#top .hero.hero-v2 .hero-lead {
+  max-width: 640px !important;
+  color: #fff !important;
+  font-size: clamp(17px, 1.8vw, 20px) !important;
+  line-height: 1.5 !important;
+}
+body#top .hero.hero-v2 .hero-description {
+  max-width: 620px !important;
+  color: rgba(255,255,255,.88) !important;
+  line-height: 1.55 !important;
+}
+body#top .hero.hero-v2 .hero-actions { margin-top: 26px !important; gap: 14px !important; }
+body#top .hero.hero-v2 .btn-outline {
+  color: #fff !important;
+  background: rgba(5,48,33,.24) !important;
+  border-color: rgba(255,255,255,.8) !important;
+}
+body#top .hero.hero-v2 .hero-features {
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 12px !important;
+  max-width: 720px !important;
+  margin-top: 32px !important;
+}
+body#top .hero.hero-v2 .hero-feature {
+  padding: 12px 4px !important;
+  border-top: 1px solid rgba(255,255,255,.3) !important;
+}
+body#top .hero.hero-v2 .hero-feature strong { color: #fff !important; }
+body#top .hero.hero-v2 .hero-feature small { color: rgba(255,255,255,.85) !important; }
+@media(max-width: 760px) {
+  body#top .hero.hero-v2 { min-height: 0 !important; padding: 46px 0 48px !important; }
+  body#top .hero.hero-v2 .hero-grid-full { width: calc(100% - 36px) !important; }
+  body#top .hero.hero-v2 h1 { font-size: clamp(32px, 8vw, 44px) !important; }
+  body#top .hero.hero-v2 .hero-features { grid-template-columns: 1fr !important; gap: 4px !important; }
+  body#top .hero.hero-v2 .hero-actions { flex-direction: column; align-items: stretch; }
+  body#top .hero.hero-v2 .hero-actions .btn { width: 100%; }
+}
