@@ -1,0 +1,307 @@
+
+/* ==================================================
+   APOIO SUSTENTABILIDADE
+   ASSISTENTE VIRTUAL - DESIGN V1
+   ================================================== */
+
+#apoio-assistente {
+    --apoio-verde: #087443;
+    --apoio-verde-escuro: #06452e;
+    --apoio-verde-claro: #e8f5ee;
+    --apoio-texto: #26352e;
+
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 99999;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--apoio-texto);
+    text-align: left;
+}
+
+#apoio-assistente *,
+#apoio-assistente *::before,
+#apoio-assistente *::after {
+    box-sizing: border-box;
+}
+
+#apoio-assistente [hidden] {
+    display: none !important;
+}
+
+/* BOTAO FLUTUANTE */
+
+#apoio-chat-abrir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 22px;
+    background: #087443;
+    color: #ffffff;
+    border: 0;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.23);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#apoio-chat-abrir span {
+    font-size: 23px;
+}
+
+#apoio-chat-abrir:hover {
+    background: #065a35;
+    transform: translateY(-3px);
+}
+
+/* JANELA DE ATENDIMENTO */
+
+#apoio-chat-janela {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    height: 610px;
+    max-height: calc(100vh - 48px);
+    background: #ffffff;
+    border: 1px solid #dce7df;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.25);
+    animation: apoioChatEntrada 0.25s ease-out;
+}
+
+/* CABECALHO */
+
+#apoio-assistente .apoio-chat-cabecalho {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+    padding: 21px 20px;
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #06452e,
+        #087443
+    );
+}
+
+#apoio-assistente .apoio-chat-cabecalho strong {
+    display: block;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+#apoio-assistente .apoio-chat-cabecalho small {
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+    opacity: 0.92;
+    margin-top: 3px;
+}
+
+/* BOTAO FECHAR */
+
+#apoio-chat-fechar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#apoio-chat-fechar:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* AREA DAS MENSAGENS */
+
+#apoio-chat-mensagens {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    gap: 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 18px 15px;
+    background: #f4f7f5;
+    scrollbar-width: thin;
+    scrollbar-color: #a8c6b4 #f4f7f5;
+}
+
+/* MENSAGENS DO ASSISTENTE */
+
+#apoio-assistente .apoio-mensagem {
+    max-width: 92%;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    flex-shrink: 0;
+}
+
+#apoio-assistente .apoio-mensagem.apoio-assistente {
+    align-self: flex-start;
+    background: #ffffff;
+    color: #26352e;
+    border: 1px solid #e1e9e3;
+    border-radius: 3px 13px 13px 13px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+/* MENSAGENS DO CLIENTE */
+
+#apoio-assistente .apoio-mensagem.apoio-cliente {
+    align-self: flex-end;
+    background: #087443;
+    color: #ffffff;
+    border-radius: 13px 3px 13px 13px;
+}
+
+/* MENU DE ATENDIMENTO */
+
+#apoio-assistente .apoio-chat-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 2px 0 6px;
+}
+
+#apoio-assistente .apoio-chat-opcoes button {
+    display: block;
+    width: 100%;
+    min-height: 43px;
+    padding: 11px 14px;
+    border: 1px solid #94bca5;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #075c36;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+    white-space: normal;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    transition: background 0.2s, color 0.2s;
+}
+
+#apoio-assistente .apoio-chat-opcoes button:hover {
+    background: #087443;
+    color: #ffffff;
+    border-color: #087443;
+}
+
+#apoio-assistente button:focus-visible {
+    outline: 3px solid #e1b94d;
+    outline-offset: 2px;
+}
+
+/* RODAPE INSTITUCIONAL */
+
+#apoio-assistente .apoio-chat-rodape {
+    flex-shrink: 0;
+    padding: 13px 16px;
+    background: #ffffff;
+    border-top: 1px solid #dce7df;
+    text-align: center;
+    color: #06452e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#apoio-assistente .apoio-chat-rodape small {
+    display: block;
+    margin-top: 4px;
+    color: #64756b;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* ANIMACAO DE ABERTURA */
+
+@keyframes apoioChatEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #apoio-assistente *,
+    #apoio-chat-janela {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+
+@media screen and (max-width: 600px) {
+
+    #apoio-assistente {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    #apoio-chat-janela {
+        width: calc(100vw - 24px);
+        height: 620px;
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+        border-radius: 15px;
+    }
+
+    #apoio-chat-abrir {
+        padding: 13px 18px;
+        font-size: 13px;
+    }
+
+    #apoio-assistente .apoio-chat-cabecalho {
+        padding: 17px;
+    }
+
+    #apoio-assistente .apoio-chat-cabecalho strong {
+        font-size: 18px;
+    }
+
+    #apoio-chat-mensagens {
+        padding: 14px 12px;
+    }
+
+    #apoio-assistente .apoio-chat-opcoes button {
+        min-height: 44px;
+        font-size: 13px;
+    }
+}
+
+/* FIM DO ASSISTENTE VIRTUAL */
