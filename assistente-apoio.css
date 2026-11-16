@@ -1,7 +1,8 @@
 
 /* ==================================================
    APOIO SUSTENTABILIDADE
-   ASSISTENTE VIRTUAL - DESIGN V1
+   ASSISTENTE VIRTUAL V3 PREMIUM
+   DESIGN INSTITUCIONAL
    ================================================== */
 
 #apoio-assistente {
@@ -31,100 +32,162 @@
     display: none !important;
 }
 
-/* BOTAO FLUTUANTE */
+#apoio-assistente button {
+    font-family: inherit;
+}
+
+#apoio-assistente svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ==================================================
+   BOTAO FLUTUANTE
+   ================================================== */
 
 #apoio-chat-abrir {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 16px 22px;
-    background: #087443;
+    gap: 11px;
+    padding: 14px 22px;
+    min-height: 56px;
+    background: linear-gradient(135deg, #087443, #065634);
     color: #ffffff;
-    border: 0;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 50px;
-    font-family: inherit;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.23);
-    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+    transition: transform 0.2s, background 0.2s;
 }
 
 #apoio-chat-abrir span {
-    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #apoio-chat-abrir:hover {
-    background: #065a35;
+    background: #06452e;
     transform: translateY(-3px);
 }
 
-/* JANELA DE ATENDIMENTO */
+/* ==================================================
+   JANELA PRINCIPAL
+   ================================================== */
 
 #apoio-chat-janela {
     display: flex;
     flex-direction: column;
-    width: 390px;
+    width: 410px;
     max-width: calc(100vw - 32px);
-    height: 610px;
-    max-height: calc(100vh - 48px);
+    height: 700px;
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
     background: #ffffff;
     border: 1px solid #dce7df;
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.28);
     animation: apoioChatEntrada 0.25s ease-out;
 }
 
-/* CABECALHO */
+/* ==================================================
+   CABECALHO PREMIUM
+   ================================================== */
 
 #apoio-assistente .apoio-chat-cabecalho {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     flex-shrink: 0;
-    padding: 21px 20px;
-    color: #ffffff;
+    padding: 16px 14px;
     background: linear-gradient(
         135deg,
-        #06452e,
+        #043e29,
         #087443
     );
+    color: #ffffff;
 }
 
-#apoio-assistente .apoio-chat-cabecalho strong {
+#apoio-assistente .apoio-chat-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #087443;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+#apoio-assistente .apoio-chat-avatar svg {
+    width: 25px;
+    height: 25px;
+}
+
+#apoio-assistente .apoio-chat-identidade {
+    flex: 1;
+    min-width: 0;
+}
+
+#apoio-assistente .apoio-chat-identidade strong {
     display: block;
+    margin: 0;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 3px;
+    line-height: 1.3;
 }
 
-#apoio-assistente .apoio-chat-cabecalho small {
+#apoio-assistente .apoio-chat-identidade small {
     display: block;
-    color: #ffffff;
-    font-size: 12px;
-    opacity: 0.92;
     margin-top: 3px;
+    color: #e0f3e8;
+    font-size: 11px;
+    line-height: 1.4;
 }
 
-/* BOTAO FECHAR */
+#apoio-assistente .apoio-chat-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+    font-size: 10px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+#apoio-assistente .apoio-chat-status-ponto {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #8aeea7;
+}
+
+/* ==================================================
+   BOTAO FECHAR
+   ================================================== */
 
 #apoio-chat-fechar {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     flex-shrink: 0;
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 50%;
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.10);
     color: #ffffff;
-    font-size: 17px;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -132,119 +195,246 @@
     background: rgba(255,255,255,0.25);
 }
 
-/* AREA DAS MENSAGENS */
+/* ==================================================
+   AREA DE CONVERSA
+   ================================================== */
 
 #apoio-chat-mensagens {
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
-    gap: 12px;
+    gap: 10px;
+    padding: 12px;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 18px 15px;
-    background: #f4f7f5;
+    background: #f3f7f4;
     scrollbar-width: thin;
-    scrollbar-color: #a8c6b4 #f4f7f5;
+    scrollbar-color: #a8c6b4 #f3f7f4;
 }
 
-/* MENSAGENS DO ASSISTENTE */
+/* ==================================================
+   BOAS-VINDAS
+   ================================================== */
+
+#apoio-assistente .apoio-boas-vindas {
+    flex-shrink: 0;
+    padding: 12px 14px;
+    background: #ffffff;
+    border: 1px solid #dce9e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+#apoio-assistente .apoio-boas-vindas strong {
+    display: block;
+    color: #06452e;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+
+#apoio-assistente .apoio-boas-vindas p {
+    margin: 0;
+    color: #53645b;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* ==================================================
+   MENSAGENS
+   ================================================== */
 
 #apoio-assistente .apoio-mensagem {
     max-width: 92%;
-    padding: 12px 14px;
-    font-size: 14px;
-    line-height: 1.6;
+    flex-shrink: 0;
+    padding: 11px 13px;
+    font-size: 13px;
+    line-height: 1.5;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
-    flex-shrink: 0;
 }
 
 #apoio-assistente .apoio-mensagem.apoio-assistente {
     align-self: flex-start;
     background: #ffffff;
     color: #26352e;
-    border: 1px solid #e1e9e3;
-    border-radius: 3px 13px 13px 13px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    border: 1px solid #dce9e0;
+    border-radius: 3px 12px 12px 12px;
 }
-
-/* MENSAGENS DO CLIENTE */
 
 #apoio-assistente .apoio-mensagem.apoio-cliente {
     align-self: flex-end;
     background: #087443;
     color: #ffffff;
-    border-radius: 13px 3px 13px 13px;
+    border-radius: 12px 3px 12px 12px;
 }
 
-/* MENU DE ATENDIMENTO */
+/* ==================================================
+   MENUS PREMIUM
+   ================================================== */
 
 #apoio-assistente .apoio-chat-opcoes {
     display: flex;
     flex-direction: column;
-    gap: 9px;
     width: 100%;
     flex-shrink: 0;
-    padding: 2px 0 6px;
+    gap: 6px;
+    padding: 0;
 }
 
 #apoio-assistente .apoio-chat-opcoes button {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 9px;
     width: 100%;
-    min-height: 43px;
-    padding: 11px 14px;
-    border: 1px solid #94bca5;
-    border-radius: 9px;
+    min-height: 46px;
+    padding: 6px 9px;
     background: #ffffff;
-    color: #075c36;
-    font-family: inherit;
+    color: #06452e;
+    border: 1px solid #d0e2d6;
+    border-radius: 10px;
     font-size: 13px;
-    font-weight: 600;
-    line-height: 1.4;
     text-align: left;
+    line-height: 1.3;
     white-space: normal;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, border-color 0.2s;
 }
 
-#apoio-assistente .apoio-chat-opcoes button:hover {
-    background: #087443;
-    color: #ffffff;
-    border-color: #087443;
-}
-
-#apoio-assistente button:focus-visible {
-    outline: 3px solid #e1b94d;
-    outline-offset: 2px;
-}
-
-/* RODAPE INSTITUCIONAL */
-
-#apoio-assistente .apoio-chat-rodape {
+#apoio-assistente .apoio-opcao-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    padding: 13px 16px;
-    background: #ffffff;
-    border-top: 1px solid #dce7df;
-    text-align: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #e8f5ee;
+    color: #087443;
+}
+
+#apoio-assistente .apoio-opcao-icone svg {
+    width: 19px;
+    height: 19px;
+}
+
+#apoio-assistente .apoio-opcao-conteudo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    gap: 2px;
+}
+
+#apoio-assistente .apoio-opcao-conteudo strong {
     color: #06452e;
     font-size: 12px;
     font-weight: 700;
+    line-height: 1.3;
 }
 
-#apoio-assistente .apoio-chat-rodape small {
-    display: block;
-    margin-top: 4px;
-    color: #64756b;
+#apoio-assistente .apoio-opcao-conteudo small {
+    color: #62756a;
     font-size: 10px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
-/* ANIMACAO DE ABERTURA */
+#apoio-assistente .apoio-opcao-seta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #087443;
+    flex-shrink: 0;
+}
+
+#apoio-assistente .apoio-opcao-seta svg {
+    width: 17px;
+    height: 17px;
+}
+
+#apoio-assistente .apoio-chat-opcoes button:hover {
+    background: #e8f5ee;
+    border-color: #087443;
+}
+
+#apoio-assistente .apoio-chat-opcoes button:hover
+.apoio-opcao-icone {
+    background: #087443;
+    color: #ffffff;
+}
+
+#apoio-assistente button:focus-visible {
+    outline: 2px solid #d7af36;
+    outline-offset: 2px;
+}
+
+/* ==================================================
+   RODAPE E MENU PRINCIPAL
+   ================================================== */
+
+#apoio-assistente .apoio-chat-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 6px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border-top: 1px solid #dce7df;
+}
+
+#apoio-chat-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #d0e2d6;
+    border-radius: 8px;
+    background: #f0f7f2;
+    color: #087443;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#apoio-chat-inicio svg {
+    width: 14px;
+    height: 14px;
+}
+
+#apoio-chat-inicio:hover {
+    background: #087443;
+    color: #ffffff;
+}
+
+#apoio-assistente .apoio-chat-marca {
+    color: #06452e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: center;
+}
+
+#apoio-assistente .apoio-chat-marca small {
+    display: block;
+    margin-top: 2px;
+    color: #64756b;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.3;
+}
+
+/* ==================================================
+   ANIMACAO
+   ================================================== */
 
 @keyframes apoioChatEntrada {
+
     from {
         opacity: 0;
         transform: translateY(14px);
@@ -254,54 +444,68 @@
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     #apoio-assistente *,
     #apoio-chat-janela {
         animation: none !important;
         transition: none !important;
     }
+
 }
 
-/* RESPONSIVIDADE PARA CELULARES */
+/* ==================================================
+   RESPONSIVIDADE
+   ================================================== */
 
 @media screen and (max-width: 600px) {
 
     #apoio-assistente {
-        right: 12px;
-        bottom: 12px;
+        right: 10px;
+        bottom: 10px;
     }
 
     #apoio-chat-janela {
-        width: calc(100vw - 24px);
-        height: 620px;
-        max-height: calc(100vh - 24px);
-        max-height: calc(100dvh - 24px);
-        border-radius: 15px;
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+        height: 700px;
+        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
+        border-radius: 14px;
     }
 
     #apoio-chat-abrir {
-        padding: 13px 18px;
+        padding: 12px 18px;
+        min-height: 50px;
         font-size: 13px;
     }
 
     #apoio-assistente .apoio-chat-cabecalho {
-        padding: 17px;
+        padding: 12px 10px;
+        gap: 8px;
     }
 
-    #apoio-assistente .apoio-chat-cabecalho strong {
-        font-size: 18px;
+    #apoio-assistente .apoio-chat-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    #apoio-assistente .apoio-chat-identidade strong {
+        font-size: 14px;
     }
 
     #apoio-chat-mensagens {
-        padding: 14px 12px;
+        padding: 10px;
+        gap: 8px;
     }
 
     #apoio-assistente .apoio-chat-opcoes button {
-        min-height: 44px;
-        font-size: 13px;
+        min-height: 46px;
     }
+
 }
 
-/* FIM DO ASSISTENTE VIRTUAL */
+/* FIM DO ASSISTENTE VIRTUAL V3 PREMIUM */
