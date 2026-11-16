@@ -1,18 +1,29 @@
 
+/* ==================================================
+   APOIO SUSTENTABILIDADE
+   ASSISTENTE VIRTUAL V2
+   CORRECAO DE INICIALIZACAO E NAVEGACAO
+   ================================================== */
+
 (function () {
     "use strict";
 
     function iniciarAssistente() {
 
-        if (document.getElementById("apoio-assistente")) return;
+        if (document.getElementById("apoio-assistente")) {
+            return;
+        }
 
         const whatsapp = "5511994576047";
+
+        let iniciado = false;
 
         const container = document.createElement("div");
         container.id = "apoio-assistente";
 
         container.innerHTML = `
-            <button id="apoio-chat-abrir"
+            <button type="button"
+                id="apoio-chat-abrir"
                 aria-expanded="false"
                 aria-controls="apoio-chat-janela">
                 <span>💬</span>
@@ -24,28 +35,33 @@
                 hidden>
 
                 <div class="apoio-chat-cabecalho">
+
                     <div>
                         <strong>Assistente Virtual</strong>
                         <small>Apoio Sustentabilidade</small>
                         <small>Atendimento comercial automático</small>
                     </div>
 
-                    <button id="apoio-chat-fechar"
+                    <button type="button"
+                        id="apoio-chat-fechar"
                         aria-label="Fechar atendimento">
                         ✕
                     </button>
+
                 </div>
 
                 <div id="apoio-chat-mensagens"
-                    aria-live="polite">
-                </div>
+                    aria-live="polite"></div>
 
                 <div class="apoio-chat-rodape">
+
                     Apoio Sustentabilidade
+
                     <small>
                         Conectando soluções, transformando
                         resíduos em oportunidades.
                     </small>
+
                 </div>
 
             </section>
@@ -53,25 +69,66 @@
 
         document.body.appendChild(container);
 
-        const abrir = document.getElementById("apoio-chat-abrir");
-        const fechar = document.getElementById("apoio-chat-fechar");
-        const janela = document.getElementById("apoio-chat-janela");
-        const mensagens = document.getElementById("apoio-chat-mensagens");
+        const abrir = document.getElementById(
+            "apoio-chat-abrir"
+        );
+
+        const fechar = document.getElementById(
+            "apoio-chat-fechar"
+        );
+
+        const janela = document.getElementById(
+            "apoio-chat-janela"
+        );
+
+        const mensagens = document.getElementById(
+            "apoio-chat-mensagens"
+        );
+
+        function rolarMensagens() {
+
+            requestAnimationFrame(function () {
+
+                mensagens.scrollTop =
+                    mensagens.scrollHeight;
+
+            });
+
+        }
 
         function mensagem(texto, tipo = "assistente") {
 
             const item = document.createElement("div");
 
-            item.className = "apoio-mensagem apoio-" + tipo;
+            item.className =
+                "apoio-mensagem apoio-" + tipo;
+
             item.textContent = texto;
 
             mensagens.appendChild(item);
-            mensagens.scrollTop = mensagens.scrollHeight;
+
+            rolarMensagens();
+
+        }
+
+        function removerMenus() {
+
+            mensagens.querySelectorAll(
+                ".apoio-chat-opcoes"
+            ).forEach(function (menu) {
+
+                menu.remove();
+
+            });
+
         }
 
         function opcoes(lista) {
 
+            removerMenus();
+
             const grupo = document.createElement("div");
+
             grupo.className = "apoio-chat-opcoes";
 
             lista.forEach(function (opcao) {
@@ -79,12 +136,15 @@
                 const botao = document.createElement("button");
 
                 botao.type = "button";
+
                 botao.textContent = opcao[0];
 
                 botao.addEventListener("click", function () {
 
-                    grupo.remove();
+                    removerMenus();
+
                     mensagem(opcao[0], "cliente");
+
                     opcao[1]();
 
                 });
@@ -94,11 +154,15 @@
             });
 
             mensagens.appendChild(grupo);
-            mensagens.scrollTop = mensagens.scrollHeight;
+
+            rolarMensagens();
+
         }
 
         function acessarPagina(pagina) {
+
             window.location.href = pagina;
+
         }
 
         function abrirWhatsApp(texto) {
@@ -114,27 +178,54 @@
             );
 
             mensagem(
-                "O atendimento será direcionado ao WhatsApp da nossa equipe."
+                "Continue seu atendimento pelo WhatsApp da nossa equipe comercial."
             );
 
             opcoes([
+
+                ["Abrir WhatsApp novamente", function () {
+
+                    abrirWhatsApp(texto);
+
+                }],
+
                 ["Voltar ao menu principal", menuPrincipal]
+
             ]);
+
         }
+
+        /* ==========================================
+           MENU PRINCIPAL
+           ========================================== */
 
         function menuPrincipal() {
 
-            mensagem("Selecione a opção desejada:");
+            mensagem(
+                "Selecione a opção desejada:"
+            );
 
             opcoes([
+
                 ["Solicitar uma cotação", menuCotacao],
+
                 ["Conhecer nossos serviços", menuServicos],
+
                 ["Contratar serviço já cotado", contratarServico],
+
                 ["Consultar uma solicitação", consultarSolicitacao],
+
                 ["Documentação ambiental", menuDocumentacao],
+
                 ["Falar com um atendente", atendimentoHumano]
+
             ]);
+
         }
+
+        /* ==========================================
+           COTACOES
+           ========================================== */
 
         function menuCotacao() {
 
@@ -145,19 +236,28 @@
             opcoes([
 
                 ["Preencher formulário de cotação", function () {
+
                     acessarPagina("solicitar-cotacao.html");
+
                 }],
 
                 ["Solicitar pelo WhatsApp", function () {
+
                     abrirWhatsApp(
                         "Olá! Gostaria de solicitar uma cotação de serviços ambientais."
                     );
+
                 }],
 
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
         }
+
+        /* ==========================================
+           SERVICOS AMBIENTAIS
+           ========================================== */
 
         function menuServicos() {
 
@@ -168,27 +268,43 @@
             opcoes([
 
                 ["Caminhão auto-vácuo", function () {
+
                     acessarPagina("caminhao-auto-vacuo.html");
+
                 }],
 
                 ["Limpeza de caixas separadoras", function () {
-                    acessarPagina("limpeza-caixa-separadora-agua-oleo.html");
+
+                    acessarPagina(
+                        "limpeza-caixa-separadora-agua-oleo.html"
+                    );
+
                 }],
 
                 ["Hidrojateamento industrial", function () {
-                    acessarPagina("hidrojateamento-industrial.html");
+
+                    acessarPagina(
+                        "hidrojateamento-industrial.html"
+                    );
+
                 }],
 
                 ["Resíduos industriais", function () {
+
                     acessarPagina("residuos-industriais.html");
+
                 }],
 
                 ["Resíduos Classe I", function () {
+
                     acessarPagina("residuos-classe-1.html");
+
                 }],
 
                 ["Resíduos Classe II", function () {
+
                     acessarPagina("residuos-classe-2.html");
+
                 }],
 
                 ["Outros serviços", menuOutrosServicos],
@@ -196,32 +312,53 @@
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
         }
 
         function menuOutrosServicos() {
 
-            mensagem("Selecione o serviço de seu interesse:");
+            mensagem(
+                "Selecione o serviço de seu interesse:"
+            );
 
             opcoes([
 
                 ["Coleta de resíduos comuns", function () {
-                    acessarPagina("coleta-lixo-comum-empresas.html");
+
+                    acessarPagina(
+                        "coleta-lixo-comum-empresas.html"
+                    );
+
                 }],
 
                 ["Limpeza de caixa de gordura e fossa", function () {
-                    acessarPagina("limpeza-caixa-gordura-fossa.html");
+
+                    acessarPagina(
+                        "limpeza-caixa-gordura-fossa.html"
+                    );
+
                 }],
 
                 ["Coleta de resíduos eletrônicos", function () {
-                    acessarPagina("coleta-residuos-eletronicos.html");
+
+                    acessarPagina(
+                        "coleta-residuos-eletronicos.html"
+                    );
+
                 }],
 
                 ["Locação de caçambas", function () {
-                    acessarPagina("locacao-cacambas-residuos.html");
+
+                    acessarPagina(
+                        "locacao-cacambas-residuos.html"
+                    );
+
                 }],
 
                 ["Logística reversa", function () {
+
                     acessarPagina("logistica-reversa-sp.html");
+
                 }],
 
                 ["Voltar aos serviços", menuServicos],
@@ -229,7 +366,12 @@
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
         }
+
+        /* ==========================================
+           DOCUMENTACAO AMBIENTAL
+           ========================================== */
 
         function menuDocumentacao() {
 
@@ -240,19 +382,30 @@
             opcoes([
 
                 ["CADRI e MTR", function () {
-                    acessarPagina("cadri-mtr-documentacao-ambiental.html");
+
+                    acessarPagina(
+                        "cadri-mtr-documentacao-ambiental.html"
+                    );
+
                 }],
 
                 ["Solicitar orientação ambiental", function () {
+
                     abrirWhatsApp(
                         "Olá! Preciso de orientação sobre CADRI, MTR e documentação ambiental."
                     );
+
                 }],
 
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
         }
+
+        /* ==========================================
+           CONTRATACAO
+           ========================================== */
 
         function contratarServico() {
 
@@ -263,15 +416,25 @@
             opcoes([
 
                 ["Encaminhar aprovação da proposta", function () {
+
                     abrirWhatsApp(
-                        "Olá! Gostaria de contratar um serviço já cotado.\n\nEmpresa:\nNúmero da proposta:\nServiço:"
+                        "Olá! Gostaria de contratar um serviço já cotado." +
+                        "\n\nEmpresa:" +
+                        "\nNúmero da proposta:" +
+                        "\nServiço:"
                     );
+
                 }],
 
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
         }
+
+        /* ==========================================
+           CONSULTAS
+           ========================================== */
 
         function consultarSolicitacao() {
 
@@ -282,76 +445,123 @@
             opcoes([
 
                 ["Consultar programação de coleta", function () {
+
                     abrirWhatsApp(
-                        "Olá! Gostaria de consultar a programação da minha coleta.\n\nEmpresa:\nNúmero da solicitação:"
+                        "Olá! Gostaria de consultar a programação da minha coleta." +
+                        "\n\nEmpresa:" +
+                        "\nNúmero da solicitação:"
                     );
+
                 }],
 
                 ["Consultar proposta comercial", function () {
+
                     abrirWhatsApp(
-                        "Olá! Gostaria de consultar uma proposta comercial.\n\nEmpresa:\nNúmero da proposta:"
+                        "Olá! Gostaria de consultar uma proposta comercial." +
+                        "\n\nEmpresa:" +
+                        "\nNúmero da proposta:"
                     );
+
                 }],
 
                 ["Consultar documentação", function () {
+
                     abrirWhatsApp(
-                        "Olá! Gostaria de consultar a documentação referente ao meu atendimento.\n\nEmpresa:"
+                        "Olá! Gostaria de consultar a documentação referente ao meu atendimento." +
+                        "\n\nEmpresa:"
                     );
+
                 }],
 
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
         }
+
+        /* ==========================================
+           ATENDIMENTO HUMANO
+           ========================================== */
 
         function atendimentoHumano() {
 
             mensagem(
-                "Você pode entrar em contato diretamente com nossa equipe comercial."
+                "Entre em contato diretamente com nossa equipe comercial."
             );
 
             opcoes([
 
                 ["Atendimento via WhatsApp", function () {
+
                     abrirWhatsApp(
                         "Olá! Gostaria de falar com a equipe da Apoio Sustentabilidade."
                     );
+
                 }],
 
                 ["Atendimento por e-mail", function () {
+
                     window.location.href =
                         "mailto:apoiosustentabilidade@gmail.com" +
                         "?subject=" +
-                        encodeURIComponent("Solicitação de atendimento");
+                        encodeURIComponent(
+                            "Solicitação de atendimento"
+                        );
 
                     opcoes([
+
                         ["Voltar ao menu principal", menuPrincipal]
+
                     ]);
+
                 }],
 
                 ["Voltar ao menu principal", menuPrincipal]
 
             ]);
+
+        }
+
+        /* ==========================================
+           INICIALIZACAO CORRIGIDA - V2
+           ========================================== */
+
+        function iniciarConversa() {
+
+            mensagens.innerHTML = "";
+
+            mensagem(
+                "Olá! Seja bem-vindo à Apoio Sustentabilidade."
+            );
+
+            mensagem(
+                "Sou seu assistente virtual de atendimento ambiental."
+            );
+
+            menuPrincipal();
+
+            iniciado = true;
+
         }
 
         abrir.addEventListener("click", function () {
 
             janela.hidden = false;
+
             abrir.hidden = true;
-            abrir.setAttribute("aria-expanded", "true");
 
-            if (!mensagens.hasChildNodes()) {
+            abrir.setAttribute(
+                "aria-expanded",
+                "true"
+            );
 
-                mensagem(
-                    "Olá! Seja bem-vindo à Apoio Sustentabilidade."
-                );
+            if (!iniciado || mensagens.children.length === 0) {
 
-                mensagem(
-                    "Sou seu assistente virtual de atendimento ambiental."
-                );
+                iniciarConversa();
 
-                menuPrincipal();
             }
+
+            rolarMensagens();
 
             fechar.focus();
 
@@ -360,23 +570,38 @@
         function fecharAssistente() {
 
             janela.hidden = true;
+
             abrir.hidden = false;
-            abrir.setAttribute("aria-expanded", "false");
+
+            abrir.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
             abrir.focus();
 
         }
 
-        fechar.addEventListener("click", fecharAssistente);
+        fechar.addEventListener(
+            "click",
+            fecharAssistente
+        );
 
         janela.addEventListener("keydown", function (evento) {
 
             if (evento.key === "Escape") {
+
                 fecharAssistente();
+
             }
 
         });
 
     }
+
+    /* ==========================================
+       CARREGAMENTO DO ASSISTENTE
+       ========================================== */
 
     if (document.readyState === "loading") {
 
@@ -392,3 +617,5 @@
     }
 
 })();
+
+/* FIM DO ASSISTENTE VIRTUAL V2 */
