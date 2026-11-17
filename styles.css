@@ -3446,3 +3446,30 @@ body#top .hero.hero-v2 .hero-feature small { color: rgba(255,255,255,.85) !impor
   body#top .hero.hero-v2 .hero-actions { flex-direction: column; align-items: stretch; }
   body#top .hero.hero-v2 .hero-actions .btn { width: 100%; }
 }
+
+/* =====================================================
+   PADRAO DE ALINHAMENTO - PAGINAS DE SERVICOS
+   Preserva o visual da HOME
+===================================================== */
+
+@media (min-width: 721px) {
+
+  body#top .hero.hero-v2:has(.hero-grid:not(.hero-grid-full)) {
+    padding: 32px 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .hero.hero-v2 .hero-grid:not(.hero-grid-full) {
+    align-items: start !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero.hero-v2 .hero-grid:not(.hero-grid-full) .hero-copy {
+    align-self: start !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+}
